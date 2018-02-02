@@ -1,0 +1,139 @@
+body {
+  margin: 0;
+  background-color: black;
+  font-family: Montserrat, sans-serif;
+}
+.ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.hidden {
+  display: none;
+}
+
+
+.ElasticBuilder {
+  color: white;
+  text-transform: uppercase;
+}
+.ElasticBuilder__head {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 296px;
+  padding: 0 32px;
+  
+  font-size: 24px;
+  font-weight: bold;
+  background-color: #976FF3;
+}
+.ElasticBuilder__row0,
+.ElasticBuilder__json-template {
+  color: black;
+}
+.ElasticBuilder__row1 {
+  display: flex;
+}
+.ElasticBuilder__row1 > label {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+  width: 0;
+}
+.ElasticBuilder__row1 > label:not(:last-child),
+.ElasticBuilder__filters > label:not(:last-child) {
+  margin-right: 25px;
+}
+.ElasticBuilder input[type="file"] {
+  display: none;
+}
+.ElasticBuilder__label-text {
+  font-size: 11px;
+  font-weight: bold;
+  padding-bottom: 10px;
+  border-bottom: 1px solid white;
+}
+.ElasticBuilder__label-option {
+  margin-top: 10px;
+  padding: 0 0 0 10px;
+  height: 38px;
+  line-height: 38px;
+
+  font-size: 15px;
+  font-weight: normal;
+  
+  border: none;
+  text-transform: uppercase;
+  background-color: black;
+  color: inherit;
+}
+.ElasticBuilder__dataset-name,
+.ElasticBuilder__json,
+.ElasticBuilder__style {
+  flex-grow: 3;
+}
+.ElasticBuilder__card-type {
+  flex-grow: 1;
+}
+.ElasticBuilder__filters-relation {
+  flex-grow: 2;
+}
+.ElasticBuilder__row2 {
+  display: flex;
+  justify-content: space-between;
+}
+.ElasticBuilder__build {
+  cursor: pointer;
+}
+.ElasticBuilder__filters {
+  display: flex;
+  justify-content: space-between;
+}
+.ElasticBuilder__filters > label {
+  width: 100%;
+}
+.ElasticBuilder__filters .ElasticBuilder__label-option {
+  width: 100%;
+}
+.ElasticBuilder__filters .ElasticBuilder__label-option,
+.ElasticBuilder__json .ElasticBuilder__label-option,
+.ElasticBuilder__style .ElasticBuilder__label-option {
+  text-transform: lowercase;
+  cursor: pointer;
+}
+
+
+.ElasticField {
+  position: relative;
+  
+  cursor: pointer;
+  user-select: none;
+}
+.ElasticField__ul {
+  display: none;
+  position: absolute;
+  z-index: 1;
+  margin: 0;
+  padding: 0;
+  
+  height: 200px;
+  overflow-x: hidden;
+  
+  background-color: #976FF3;
+  list-style-type: none;
+}
+.ElasticField:hover .ElasticField__ul {
+  display: block;
+}
+.ElasticField__li {
+  padding: 4px;
+}
+.ElasticField__li:hover {
+  background-color: #8864db;
+}
+
+
+.ElasticView {
+  margin: 0 32px;
+}
