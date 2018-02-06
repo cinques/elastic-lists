@@ -1,0 +1,302 @@
+body {
+  margin: 0;
+  background-color: black;
+  color: hsla(0, 0%, 100%, .75);
+  font-family: Montserrat, sans-serif;
+}
+body::-webkit-scrollbar {
+  display: none;
+}
+.ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ElasticView {
+  margin: 0 32px;
+}
+
+.Header {
+  height: 104px;
+  line-height: 104px;
+  color: #976ff3;
+  font-size: 24px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+
+.ElasticFilter {
+  display: flex;
+  justify-content: space-between;
+  
+  margin: 2px 0;
+  padding: 0 11px;
+  overflow: hidden;
+  
+  height: 38px;
+  line-height: 38px;
+  
+  transition: height 0.3s ease, color 0.3s ease, background-color 0.3s ease;
+}
+.ElasticFilter:hover {
+  color: white;
+}
+.ElasticFilter_active,
+.ElasticFilter:hover,
+.ElasticFilter_empty {
+  background-color: #4e485c;
+}
+.ElasticFilter__name {
+  max-width: calc(100% - 25px);
+}
+.ElasticFilter__number {
+  max-width: 50px;
+}
+.ElasticFilter_empty:not(.ElasticFilter_active) {
+  height: 8px;
+  color: #4e485c;
+}
+
+
+.ElasticFilterList {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 36px;
+  border-bottom: #4e485c 2px solid;
+}
+.ElasticFilterList__column {
+  width: 100%;
+  overflow-x: hidden;
+  
+  font-size: 11px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.ElasticFilterList__column:not(:last-child) {
+  margin: 0 25px;
+}
+.ElasticFilterList__column:hover .ElasticFilterList__header {
+  color: white;
+}
+.ElasticFilterList__header {
+  height: 26px;
+  line-height: 26px;
+  
+  color: #4e485c;
+  border-bottom: #4e485c 1px solid;
+}
+.ElasticFilterList__filters {
+  height: 400px;
+  overflow-x: hidden;
+}
+.ElasticFilterList__filters::-webkit-scrollbar {
+  display: none;
+}
+
+
+.ElasticItemList {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+
+.ElasticItem {
+  margin: 6px;
+}
+
+.ItemCard-T1 {
+  position: relative;
+  width: 424px;
+  height: 248px;
+  background: #403A4F;
+}
+
+.btn_Group {
+  position: absolute;
+  left: 60.38%;
+  right: 5.66%;
+  top: 70.97%;
+  bottom: 6.45%;
+}
+
+.ElasticItem__url_yandex {
+  position: absolute;
+  left: 79.25%;
+  right: 5.66%;
+  top: 83.87%;
+  bottom: 6.45%;
+  
+  
+  font-family: Stem;
+  line-height: normal;
+  font-size: 15px;
+  text-align: right;
+  
+  color: #976FF3;
+}
+
+
+.ElasticItem__url_mende {
+  position: absolute;
+  left: 60.38%;
+  right: 26.42%;
+  top: 83.87%;
+  bottom: 6.45%;
+  
+  font-family: Stem;
+  line-height: normal;
+  font-size: 15px;
+  text-align: right;
+  
+  color: #976FF3;
+}
+
+
+.ElasticItem__maps {
+  position: absolute;
+  left: 60.38%;
+  right: 5.66%;
+  top: 70.97%;
+  bottom: 16.13%;
+  
+  font-family: Stem;
+  line-height: normal;
+  font-size: 11px;
+  text-align: right;
+  
+  color: #FFFFFF;
+  opacity: 0.5;
+}
+
+
+.btn_Single {
+  position: absolute;
+  left: 5.66%;
+  right: 73.58%;
+  top: 70.97%;
+  bottom: 6.45%;
+}
+
+
+.ElasticItem__info {
+  
+  position: absolute;
+  left: 5.66%;
+  right: 73.58%;
+  top: 70.97%;
+  bottom: 16.13%;
+  
+  font-family: Stem;
+  line-height: normal;
+  font-size: 11px;
+  
+  color: #FFFFFF;
+  opacity: 0.5;
+}
+
+
+ElasticItem__url_wiki {
+  position: absolute;
+  left: 5.66%;
+  right: 79.25%;
+  top: 83.87%;
+  bottom: 6.45%;
+  
+  font-family: Stem;
+  line-height: normal;
+  font-size: 15px;
+  
+  color: #976FF3;
+}
+
+
+.Item {
+  
+  position: absolute;
+  left: 5.66%;
+  right: 5.66%;
+  top: 29.03%;
+  bottom: 38.71%;
+}
+
+
+
+.ElasticItem__uyezd {
+  position: absolute;
+  left: 5.66%;
+  right: 5.66%;
+  top: 48.39%;
+  bottom: 45.16%;
+  
+  font-family: Stem;
+  line-height: normal;
+  font-size: 11px;
+  
+  color: #FFFFFF;
+  opacity: 0.5;
+}
+
+
+.ElasticItem__laity {
+  
+  position: absolute;
+  left: 5.66%;
+  right: 5.66%;
+  top: 54.84%;
+  bottom: 38.71%;
+  
+  font-family: Stem;
+  line-height: normal;
+  font-size: 11px;
+  
+  color: #FFFFFF;
+  opacity: 0.5;
+}
+
+
+.ElasticItem__name_mende {
+  
+  position: absolute;
+  left: 5.66%;
+  right: 5.66%;
+  top: 29.03%;
+  bottom: 54.84%;
+  
+  font-family: Stem;
+  line-height: normal;
+  font-size: 24px;
+  
+  color: #FFFFFF;
+}
+
+
+.Title {
+  
+  position: absolute;
+  left: 5.66%;
+  right: 5.66%;
+  top: 6.45%;
+  bottom: 80.65%;
+}
+
+
+
+
+.ElasticItem__type {
+  position: absolute;
+  left: 5.66%;
+  right: 52.83%;
+  top: 6.45%;
+  bottom: 80.65%;
+  
+  font-family: Stem;
+  line-height: normal;
+  font-size: 11px;
+  
+  color: #FFFFFF;
+  opacity: 0.5;
+}
+

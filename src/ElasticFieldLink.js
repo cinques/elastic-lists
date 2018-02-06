@@ -1,11 +1,12 @@
-Vue.component('elastic-field', {
+Vue.component('elastic-field-link', {
   template: `
     <div class="ElasticField" :class="'ElasticItem__' + selected">
-      {{selected}}
+      <a :href="selected">{{text}}</a>
       <ul class="ElasticField__ul" :class="{ hidden: !expanded }">
         <li class="ElasticField__li" v-for="field of Object.keys(model)" @click="onFieldChange(field)">{{field}}</li>
       </ul>
     </div>`,
+  props: ['text'],
   data() {
     const model = this.$parent.model;
     return {
@@ -20,7 +21,7 @@ Vue.component('elastic-field', {
       EventBus.$emit('onFieldChange');
     },
     getTemplate() {
-      return `<div class="ElasticItem__${this.selected}">{{ datum.${this.selected} }}</div>`
+      return `<a class="ElasticItem__${this.selected}" :href="datum.${this.selected}">${this.text}</a>`
     }
   },
 });

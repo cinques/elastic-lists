@@ -5,10 +5,13 @@ Vue.component('elastic-item-list', {
         <component ref="templateCard"
                    :is="config.CardType"
                    :model="filteredData[0]" />
-        <elastic-item v-for="datum of filteredData"
+        <template v-if="cardTemplate">
+          <elastic-item v-for="datum of filteredData"
                      :key="datum.__id__"
                      :datum="datum"
-                     :template="cardTemplate" />
+                     :render="cardTemplate.render"
+                     :staticRenderFns="cardTemplate.staticRenderFns" />
+        </template>
       </template>
     </div>`,
   props: ['config'],
@@ -41,8 +44,8 @@ Vue.component('elastic-item-list', {
     buildCardTemplate(raw) {
       const traverse = (child, isRoot) => {
         const vm = child.__vue__;
-        if (vm && vm.$options.name === 'elastic-field') {
-          return `<div class="ElasticItem__${vm.selected}">{{ datum.${vm.selected} }}</div>`;
+        if (vm && !isRoot) {
+          return vm.getTemplate();
         }
 
         if (!child.children.length) {
@@ -50,7 +53,7 @@ Vue.component('elastic-item-list', {
         }
 
         const childClone = child.cloneNode();
-        childClone.innerHTML = [...child.children].map(traverse).join('');
+        childClone.innerHTML = [...child.children].map(x => traverse(x)).join('');
 
         if (isRoot) {
           return childClone.innerHTML;
@@ -63,7 +66,7 @@ Vue.component('elastic-item-list', {
 
       return raw
         ? markup
-        : Vue.compile(`<div class="ElasticItem">${markup}</div>`).render;
+        : Vue.compile(`<div class="ElasticItem">${markup}</div>`);
     },
   },
 });
