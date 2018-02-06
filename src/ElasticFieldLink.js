@@ -21,7 +21,7 @@ Vue.component('elastic-field-link', {
       EventBus.$emit('onFieldChange');
     },
     getTemplate() {
-      return `<a class="ElasticItem__${this.selected}" :href="datum.${this.selected}">${this.text}</a>`
+      return `<a class="${this.$el.classList}" :href="datum.${this.selected}">${this.text}</a>`
     }
   },
 });

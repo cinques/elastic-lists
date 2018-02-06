@@ -1,25 +1,25 @@
 Vue.component('type1', {
   template: `
-    <div class="ItemCard-T1">
-      <div class="Title">
-        <elastic-field/>
+    <div class="Type1">
+      <div class="Type1__title">
+        <elastic-field class="Type1__title-elem1"/>
       </div>
       
-      <div class="Item">
-        <elastic-field/>
-        <elastic-field/>, <elastic-field/>
-        <elastic-field/>
+      <div class="Type1__item">
+        <elastic-field class="Type1__item-elem1"/>
+        <elastic-field class="Type1__item-elem2"/>, <elastic-field class="Type1__item-elem3"/>
+        <elastic-field class="Type1__item-elem4"/>
       </div>
       
-      <div class="btn_Single">
-        <div class="ElasticItem__info">Информация</div>
-        <elastic-field-link text="wiki"/>
+      <div class="Type1__btn-single">
+        <div class="Type1__btn-signle-caption">Информация</div>
+        <elastic-field-link class="Type1__btn-signle-wiki" text="wiki"/>
       </div>
       
-      <div class="btn_Group">
-        <div class="ElasticItem__maps">Карты</div>
-        <elastic-field-link text="менде"/>
-        <elastic-field-link text="яндекс"/>
+      <div class="Type1__btn-group">
+        <div class="Type1__btn-group-caption">Карты</div>
+        <elastic-field-link class="Type1__btn-group-mende" text="менде"/>
+        <elastic-field-link class="Type1__btn-group-yandex" text="яндекс"/>
       </div>
     </div>`,
   props: ['model'],

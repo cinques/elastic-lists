@@ -107,14 +107,14 @@ body::-webkit-scrollbar {
   margin: 6px;
 }
 
-.ItemCard-T1 {
+.Type1 {
   position: relative;
   width: 424px;
   height: 248px;
   background: #403A4F;
 }
 
-.btn_Group {
+.Type1__btn-group {
   position: absolute;
   left: 60.38%;
   right: 5.66%;
@@ -122,7 +122,7 @@ body::-webkit-scrollbar {
   bottom: 6.45%;
 }
 
-.ElasticItem__url_yandex {
+.Type1__btn-group-yandex {
   position: absolute;
   left: 79.25%;
   right: 5.66%;
@@ -130,7 +130,6 @@ body::-webkit-scrollbar {
   bottom: 6.45%;
   
   
-  font-family: Stem;
   line-height: normal;
   font-size: 15px;
   text-align: right;
@@ -139,14 +138,13 @@ body::-webkit-scrollbar {
 }
 
 
-.ElasticItem__url_mende {
+.Type1__btn-group-mende {
   position: absolute;
   left: 60.38%;
   right: 26.42%;
   top: 83.87%;
   bottom: 6.45%;
   
-  font-family: Stem;
   line-height: normal;
   font-size: 15px;
   text-align: right;
@@ -155,7 +153,7 @@ body::-webkit-scrollbar {
 }
 
 
-.ElasticItem__maps {
+.Type1__btn-group-caption {
   position: absolute;
   left: 60.38%;
   right: 5.66%;
@@ -172,7 +170,7 @@ body::-webkit-scrollbar {
 }
 
 
-.btn_Single {
+.Type1__btn-single {
   position: absolute;
   left: 5.66%;
   right: 73.58%;
@@ -181,7 +179,7 @@ body::-webkit-scrollbar {
 }
 
 
-.ElasticItem__info {
+.Type1__btn-signle-caption {
   
   position: absolute;
   left: 5.66%;
@@ -189,7 +187,6 @@ body::-webkit-scrollbar {
   top: 70.97%;
   bottom: 16.13%;
   
-  font-family: Stem;
   line-height: normal;
   font-size: 11px;
   
@@ -198,7 +195,7 @@ body::-webkit-scrollbar {
 }
 
 
-ElasticItem__url_wiki {
+.Type1__btn-signle-wiki {
   position: absolute;
   left: 5.66%;
   right: 79.25%;
@@ -213,7 +210,7 @@ ElasticItem__url_wiki {
 }
 
 
-.Item {
+.Type1__item {
   
   position: absolute;
   left: 5.66%;
@@ -224,14 +221,27 @@ ElasticItem__url_wiki {
 
 
 
-.ElasticItem__uyezd {
+.Type1__item-elem2 {
   position: absolute;
   left: 5.66%;
   right: 5.66%;
   top: 48.39%;
   bottom: 45.16%;
   
-  font-family: Stem;
+  line-height: normal;
+  font-size: 11px;
+  
+  color: #FFFFFF;
+  opacity: 0.5;
+}
+
+.Type1__item-elem3 {
+  position: absolute;
+  left: 5.66%;
+  right: 5.66%;
+  top: 48.39%;
+  bottom: 45.16%;
+  
   line-height: normal;
   font-size: 11px;
   
@@ -240,7 +250,7 @@ ElasticItem__url_wiki {
 }
 
 
-.ElasticItem__laity {
+.Type1__item-elem4 {
   
   position: absolute;
   left: 5.66%;
@@ -248,7 +258,6 @@ ElasticItem__url_wiki {
   top: 54.84%;
   bottom: 38.71%;
   
-  font-family: Stem;
   line-height: normal;
   font-size: 11px;
   
@@ -257,7 +266,7 @@ ElasticItem__url_wiki {
 }
 
 
-.ElasticItem__name_mende {
+.Type1__item-elem1 {
   
   position: absolute;
   left: 5.66%;
@@ -265,7 +274,6 @@ ElasticItem__url_wiki {
   top: 29.03%;
   bottom: 54.84%;
   
-  font-family: Stem;
   line-height: normal;
   font-size: 24px;
   
@@ -273,7 +281,7 @@ ElasticItem__url_wiki {
 }
 
 
-.Title {
+.Type1__title {
   
   position: absolute;
   left: 5.66%;
@@ -285,14 +293,13 @@ ElasticItem__url_wiki {
 
 
 
-.ElasticItem__type {
+.Type1__title {
   position: absolute;
   left: 5.66%;
   right: 52.83%;
   top: 6.45%;
   bottom: 80.65%;
   
-  font-family: Stem;
   line-height: normal;
   font-size: 11px;
   

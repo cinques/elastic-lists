@@ -20,7 +20,7 @@ Vue.component('elastic-field', {
       EventBus.$emit('onFieldChange');
     },
     getTemplate() {
-      return `<div class="ElasticItem__${this.selected}">{{ datum.${this.selected} }}</div>`
+      return `<div class="${this.$el.classList}">{{ datum.${this.selected} }}</div>`
     }
   },
 });

@@ -3,6 +3,7 @@ Vue.component('elastic-item-list', {
     <div class="ElasticItemList">
       <template v-if="filteredData.length">
         <component ref="templateCard"
+                   class="ElasticItem"
                    :is="config.CardType"
                    :model="filteredData[0]" />
         <template v-if="cardTemplate">
@@ -62,11 +63,19 @@ Vue.component('elastic-item-list', {
         return childClone.outerHTML;
       };
 
-      const markup = traverse(this.$refs.templateCard.$el, true);
-
-      return raw
-        ? markup
-        : Vue.compile(`<div class="ElasticItem">${markup}</div>`);
+      const root = this.$refs.templateCard.$el;
+      const markup = traverse(root, true);
+  
+      const rootClone = root.cloneNode();
+      rootClone.innerHTML = markup;
+      
+      if (raw) {
+        rootClone.setAttribute('v-for', 'datum of filteredData');
+        rootClone.setAttribute(':key', 'datum.__id__');
+        return rootClone.outerHTML;
+      }
+      
+      return Vue.compile(rootClone.outerHTML);
     },
   },
 });
