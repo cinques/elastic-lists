@@ -21,7 +21,7 @@ Vue.component('elastic-field-link', {
     },
     getTemplate() {
       const classList = this.$el.classList.toString().replace('ElasticField', '');
-      return `<a class="${classList}" :href="datum.${this.selected}">${this.text}</a>`
+      return `<div class="${classList}"><a :href="datum.${this.selected}">${this.text}</a></div>`
     }
   },
 });
