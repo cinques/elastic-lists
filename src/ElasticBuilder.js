@@ -61,7 +61,7 @@ Vue.component('elastic-builder', {
   data() {
     return {
       cardType: 'type1',
-      availableCardTypes: ['type1', 'type2'],
+      availableCardTypes: ['type1', 'type2', 'type3'],
       jsonFileName: '',
       styleFileName: '',
     }
