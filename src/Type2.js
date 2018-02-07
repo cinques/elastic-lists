@@ -19,7 +19,7 @@ Vue.component('type2', {
       </div>
       
       <div class="Type2__footer">
-        <div class="Type2__footer-static-text">
+        <div class="Type2__footer-text-static">
           <div class="Type2__info">Colors</div>
           <div class="Type2__maps">Contacts</div>
         </div>
