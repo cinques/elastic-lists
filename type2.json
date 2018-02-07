@@ -1,0 +1,90 @@
+[
+  {
+    "id": 1,
+    "type": "article",
+    "author": "Thomas Fickert",
+    "month": "Mar",
+    "year": 2015,
+    "topic": "future banking",
+    "name": "Banking UX Design Challenges to Fit Future Generation",
+    "url": "",
+    "article_img_url": "https://cdn.pixabay.com/photo/2013/02/20/10/32/painting-83668_640.jpg"
+  },
+  {
+    "id": 2,
+    "type": "research",
+    "author": "Thomas Fickert",
+    "month": "Jan",
+    "year": 2017,
+    "topic": "eye tracking",
+    "name": "Eyes fixtures for travelsites",
+    "url": "",
+    "article_img_url": ""
+  },
+  {
+    "id": 3,
+    "type": "book",
+    "author": "Clara Johnes",
+    "month": "Feb",
+    "year": 2016,
+    "topic": "card sorting",
+    "name": "Navigation principles",
+    "url": "",
+    "article_img_url": ""
+  },
+  {
+    "id": 4,
+    "type": "event",
+    "author": "Emma Nielsen",
+    "month": "Feb",
+    "year": 2018,
+    "topic": "rvmf",
+    "name": "Channels and Locks",
+    "url": "",
+    "article_img_url": ""
+  },
+  {
+    "id": 2,
+    "type": "research",
+    "author": "Thomas Fickert",
+    "month": "Jan",
+    "year": 2017,
+    "topic": "eye tracking",
+    "name": "Eyes fixtures for travelsites",
+    "url": "",
+    "article_img_url": ""
+  },
+  {
+    "id": 2,
+    "type": "research",
+    "author": "Clara Johnes",
+    "month": "Jan",
+    "year": 2017,
+    "topic": "eye tracking",
+    "name": "Eyes fixtures for travelsites",
+    "url": "",
+    "article_img_url": ""
+  },
+  {
+    "id": 2,
+    "type": "research",
+    "author": "Noah Waynet",
+    "month": "Jan",
+    "year": 2017,
+    "topic": "eye tracking",
+    "name": "Eyes fixtures for travelsites",
+    "url": "",
+    "article_img_url": ""
+  },
+  {
+    "id": 5,
+    "type": "article",
+    "author": "Brad Frost",
+    "month": "Aug",
+    "year": 2018,
+    "topic": "design systems",
+    "name": "Atomic",
+    "url": "",
+    "article_img_url": ""
+  }
+]

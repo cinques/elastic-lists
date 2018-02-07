@@ -2,9 +2,7 @@ Vue.component('elastic-item-list', {
   props: ['config'],
   template: `<div class="ElasticItemList">
               <template v-if="filteredData.length">
-                <div class="ElasticItem" v-for="datum of filteredData" :key="datum.__id__">
-                     ${itemTemplate}
-                </div>
+                ${itemTemplate}
               </template>
             </div>`,
   data() {
