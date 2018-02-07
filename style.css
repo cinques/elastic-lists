@@ -104,6 +104,16 @@ body {
 }
 
 
+.ElasticItemList {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.ElasticItem {
+  margin: 6px;
+}
+
 .ElasticField {
   position: relative;
   
@@ -120,10 +130,22 @@ body {
   height: 200px;
   overflow-x: hidden;
   
+  color: white;
+  font-size: 15px;
+  text-transform: none;
   background-color: #976FF3;
   list-style-type: none;
 }
-.ElasticField:hover .ElasticField__ul {
+.ElasticField__ul::-webkit-scrollbar {
+  display: none;
+}
+.ElasticField__text {
+  display: inline-block;
+}
+.ElasticField__text:hover ~ .ElasticField__ul {
+  display: block;
+}
+.ElasticField__ul:hover {
   display: block;
 }
 .ElasticField__li {

@@ -1,8 +1,8 @@
 Vue.component('elastic-field', {
   template: `
     <div class="ElasticField" :class="'ElasticItem__' + selected">
-      {{selected}}
-      <ul class="ElasticField__ul" :class="{ hidden: !expanded }">
+      <div class="ElasticField__text">{{selected}}</div>
+      <ul class="ElasticField__ul">
         <li class="ElasticField__li" v-for="field of Object.keys(model)" @click="onFieldChange(field)">{{field}}</li>
       </ul>
     </div>`,
@@ -11,7 +11,6 @@ Vue.component('elastic-field', {
     return {
       model,
       selected: Object.keys(model)[0],
-      expanded: false,
     }
   },
   methods: {
@@ -20,7 +19,8 @@ Vue.component('elastic-field', {
       EventBus.$emit('onFieldChange');
     },
     getTemplate() {
-      return `<div class="${this.$el.classList}">{{ datum.${this.selected} }}</div>`
+      const classList = this.$el.classList.toString().replace('ElasticField', '');
+      return `<div class="${classList}">{{ datum.${this.selected} }}</div>`
     }
   },
 });
