@@ -149,24 +149,22 @@ body::-webkit-scrollbar {
 .Type2__content-elem2-3-1:after {
   content: '\00a0';
 }
-.Type2__footer-text-static {
+.Type2__footer {
   display: flex;
   justify-content: space-between;
-  
+}
+.Type2__footer-elem1-1,
+.Type2__footer-elem2-1 {
   margin-bottom: 6px;
 }
-.Type2__footer-links {
+.Type2__footer-elem2-2 {
   display: flex;
-  justify-content: space-between;
 }
-.Type2__footer-links a {
+.Type2__footer a {
   font-size: 15px;
   color: #976FF3;
   text-decoration: none;
 }
-.Type2__footer-links-right-column {
-  display: flex;
-}
-.Type2__footer-links-right-column > div:not(:last-child) {
+.Type2__footer-elem2-2 > div:not(:last-child) {
   margin-right: 5px;
 }

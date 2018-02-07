@@ -19,13 +19,14 @@ Vue.component('type2', {
       </div>
       
       <div class="Type2__footer">
-        <div class="Type2__footer-text-static">
-          <div class="Type2__info">Colors</div>
-          <div class="Type2__maps">Contacts</div>
+        <div class="Type2__footer-elem1">
+          <div class="Type2__footer-elem1-1">Colors</div>
+          <elastic-field class="Type2__footer-elem1-2"/>
         </div>
-        <div class="Type2__footer-links">
-          <div class="Type2__footer-links-left-column">colors</div>
-          <div class="Type2__footer-links-right-column">
+        
+        <div class="Type2__footer-elem2">
+          <div class="Type2__footer-elem2-1">Contacts</div>
+          <div class="Type2__footer-elem2-2">
             <elastic-field-link class="Type2__email" text="email"/>
             <elastic-field-link class="Type2__web" text="web"/>
             <elastic-field-link class="Type2__social" text="social"/>
