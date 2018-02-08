@@ -8,7 +8,8 @@
     "topic": "future banking",
     "name": "Banking UX Design Challenges to Fit Future Generation",
     "url": "",
-    "article_img_url": "https://cdn.pixabay.com/photo/2013/02/20/10/32/painting-83668_640.jpg"
+    "article_img_url": "https://cdn.pixabay.com/photo/2013/02/20/10/32/painting-83668_640.jpg",
+    "color_primarycolor_accentcolor_neutral": ["#fff", "#fac", "#abc"]
   },
   {
     "id": 2,
@@ -19,7 +20,8 @@
     "topic": "eye tracking",
     "name": "Eyes fixtures for travelsites",
     "url": "",
-    "article_img_url": ""
+    "article_img_url": "",
+    "color_primarycolor_accentcolor_neutral": ["#fff", "#fac", "#abc"]
   },
   {
     "id": 3,
@@ -30,7 +32,8 @@
     "topic": "card sorting",
     "name": "Navigation principles",
     "url": "",
-    "article_img_url": ""
+    "article_img_url": "",
+    "color_primarycolor_accentcolor_neutral": ["#fff", "#fac", "#abc"]
   },
   {
     "id": 4,
@@ -41,7 +44,8 @@
     "topic": "rvmf",
     "name": "Channels and Locks",
     "url": "",
-    "article_img_url": ""
+    "article_img_url": "",
+    "color_primarycolor_accentcolor_neutral": ["#fff", "#fac", "#abc"]
   },
   {
     "id": 2,
@@ -52,7 +56,8 @@
     "topic": "eye tracking",
     "name": "Eyes fixtures for travelsites",
     "url": "",
-    "article_img_url": ""
+    "article_img_url": "",
+    "color_primarycolor_accentcolor_neutral": ["#fff", "#fac", "#abc"]
   },
   {
     "id": 2,
@@ -63,7 +68,8 @@
     "topic": "eye tracking",
     "name": "Eyes fixtures for travelsites",
     "url": "",
-    "article_img_url": ""
+    "article_img_url": "",
+    "color_primarycolor_accentcolor_neutral": ["#fff", "#fac", "#abc"]
   },
   {
     "id": 2,
@@ -74,7 +80,8 @@
     "topic": "eye tracking",
     "name": "Eyes fixtures for travelsites",
     "url": "",
-    "article_img_url": ""
+    "article_img_url": "",
+    "color_primarycolor_accentcolor_neutral": ["#fff", "#fac", "#abc"]
   },
   {
     "id": 5,
@@ -85,6 +92,7 @@
     "topic": "design systems",
     "name": "Atomic",
     "url": "",
-    "article_img_url": ""
+    "article_img_url": "",
+    "color_primarycolor_accentcolor_neutral": ["#fff", "#fac", "#abc"]
   }
 ]

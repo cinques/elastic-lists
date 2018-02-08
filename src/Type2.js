@@ -21,7 +21,7 @@ Vue.component('type2', {
       <div class="Type2__footer">
         <div class="Type2__footer-elem1">
           <div class="Type2__footer-elem1-1">Colors</div>
-          <elastic-field class="Type2__footer-elem1-2"/>
+          <elastic-field-colors class="Type2__footer-elem1-2"/>
         </div>
         
         <div class="Type2__footer-elem2">

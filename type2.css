@@ -168,3 +168,12 @@ body::-webkit-scrollbar {
 .Type2__footer-elem2-2 > div:not(:last-child) {
   margin-right: 5px;
 }
+
+.Type2__footer-elem1-2 > div {
+  display: inline-block;
+  width: 16px;
+  height: 4px;
+}
+.Type2__footer-elem1-2 > div:not(:last-child) {
+  margin-right: 2px;
+}
