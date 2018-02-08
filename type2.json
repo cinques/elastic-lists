@@ -9,7 +9,7 @@
     "name": "Banking UX Design Challenges to Fit Future Generation",
     "url": "",
     "article_img_url": "https://cdn.pixabay.com/photo/2013/02/20/10/32/painting-83668_640.jpg",
-    "color_primarycolor_accentcolor_neutral": ["#fff", "#fac", "#abc"]
+    "color1": "#abc"
   },
   {
     "id": 2,
@@ -21,7 +21,7 @@
     "name": "Eyes fixtures for travelsites",
     "url": "",
     "article_img_url": "",
-    "color_primarycolor_accentcolor_neutral": ["#fff", "#fac", "#abc"]
+    "color1": "#abc"
   },
   {
     "id": 3,
@@ -33,7 +33,7 @@
     "name": "Navigation principles",
     "url": "",
     "article_img_url": "",
-    "color_primarycolor_accentcolor_neutral": ["#fff", "#fac", "#abc"]
+    "color1": "#abc"
   },
   {
     "id": 4,
@@ -45,7 +45,7 @@
     "name": "Channels and Locks",
     "url": "",
     "article_img_url": "",
-    "color_primarycolor_accentcolor_neutral": ["#fff", "#fac", "#abc"]
+    "color1": "#abc"
   },
   {
     "id": 2,
@@ -57,7 +57,7 @@
     "name": "Eyes fixtures for travelsites",
     "url": "",
     "article_img_url": "",
-    "color_primarycolor_accentcolor_neutral": ["#fff", "#fac", "#abc"]
+    "color1": "#abc"
   },
   {
     "id": 2,
@@ -69,7 +69,7 @@
     "name": "Eyes fixtures for travelsites",
     "url": "",
     "article_img_url": "",
-    "color_primarycolor_accentcolor_neutral": ["#fff", "#fac", "#abc"]
+    "color1": "#abc"
   },
   {
     "id": 2,
@@ -81,7 +81,7 @@
     "name": "Eyes fixtures for travelsites",
     "url": "",
     "article_img_url": "",
-    "color_primarycolor_accentcolor_neutral": ["#fff", "#fac", "#abc"]
+    "color1": "#abc"
   },
   {
     "id": 5,
@@ -93,6 +93,6 @@
     "name": "Atomic",
     "url": "",
     "article_img_url": "",
-    "color_primarycolor_accentcolor_neutral": ["#fff", "#fac", "#abc"]
+    "color1": "#abc"
   }
 ]
