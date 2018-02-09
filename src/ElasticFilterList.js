@@ -15,13 +15,16 @@ Vue.component('elastic-filter-list', {
             />
           </template>
           <template v-else>
-            <elastic-filter
-              v-for="(number, filter) of column.filters"
-              :key="filter"
-              :name="filter"
-              :number="number"
-              @onFilter="onFilter(column.key, ...arguments)"
-            />
+            <div class="ElasticFilterList__filters-shadow"></div>
+            <div class="ElasticFilterList__filters-content">
+              <elastic-filter
+                v-for="(number, filter) of column.filters"
+                :key="filter"
+                :name="filter"
+                :number="number"
+                @onFilter="onFilter(column.key, ...arguments)"
+              />
+            </div>
           </template>
         </div>
       </div>

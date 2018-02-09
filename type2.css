@@ -86,11 +86,40 @@ body::-webkit-scrollbar {
   border-bottom: #4e485c 1px solid;
 }
 .ElasticFilterList__filters {
+  position: relative;
+}
+.ElasticFilterList__filters-content {
   height: 400px;
   overflow-x: hidden;
 }
-.ElasticFilterList__filters::-webkit-scrollbar {
+.ElasticFilterList__filters-content::-webkit-scrollbar {
   display: none;
+}
+
+.ElasticFilterList__filters-shadow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.ElasticFilterList__filters-shadow::before {
+  content: ' ';
+  position: absolute;
+  width: 100%;
+  height: 22px;
+  background: linear-gradient(to bottom, rgba(0,0,0,1) 0,rgba(0,0,0,0) 100%);
+}
+
+.ElasticFilterList__filters-shadow::after {
+  content: ' ';
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 22px;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0,rgb(0,0,0) 100%);
 }
 
 .ElasticFilterList_sticky {
