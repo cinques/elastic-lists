@@ -103,13 +103,6 @@ body {
   cursor: pointer;
 }
 
-
-.ElasticItemList {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
 .ElasticItem {
   margin: 6px;
 }

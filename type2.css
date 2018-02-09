@@ -97,8 +97,9 @@ body::-webkit-scrollbar {
 
 .ElasticItemList {
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
+  margin: 0 auto;
+  max-width: 1400px;
 }
 
 
