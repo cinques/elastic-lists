@@ -3,14 +3,14 @@ Vue.component('elastic-filter', {
     <div class="ElasticFilter"
          :class="{
            ElasticFilter_active: isActive,
-           ElasticFilter_empty: !number,
+           ElasticFilter_empty: !number && canChangeVisible,
          }"
          @click="onClick"
     >
       <span class="ElasticFilter__name ellipsis" :title="name">{{name}}</span>
       <span class="ElasticFilter__number ellipsis" :title="number">{{number}}</span>
     </div>`,
-  props: ['name', 'number'],
+  props: ['name', 'number', 'canChangeVisible'],
   data() {
     return {
       isActive: false,

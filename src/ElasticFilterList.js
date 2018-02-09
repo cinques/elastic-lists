@@ -1,33 +1,54 @@
 Vue.component('elastic-filter-list', {
   template: `
-    <div class="ElasticFilterList">
+    <div class="ElasticFilterList" :class="{ ElasticFilterList_sticky: sticky }">
       <div class="ElasticFilterList__column"
            v-for="(column, idx) of columns"
            :style="{ flexGrow: config.FiltersRelation[idx] }"
            :key="column.key">
         <div class="ElasticFilterList__header ellipsis" :title="column.name">{{column.name}}</div>
         <div class="ElasticFilterList__filters">
-          <elastic-filter
-            v-for="(number, filter) of column.filters"
-            :key="filter"
-            :name="filter"
-            :number="number"
-            @onFilter="onFilter(column.key, ...arguments)"
-          />
+          <template v-if="sticky">
+            <elastic-filter
+               :name="filters[column.key][0] || '- Все -'"
+               :number="column.filters[filters[column.key][0]]"
+               :canChangeVisible="false"
+            />
+          </template>
+          <template v-else>
+            <elastic-filter
+              v-for="(number, filter) of column.filters"
+              :key="filter"
+              :name="filter"
+              :number="number"
+              @onFilter="onFilter(column.key, ...arguments)"
+            />
+          </template>
         </div>
       </div>
     </div>`,
   props: ['config'],
   created() {
     EventBus.$on('onFiltersChanged', this.onFiltersChanged.bind(this));
+    window.addEventListener('scroll', this.onScroll);
+  },
+  destroyed () {
+    window.removeEventListener('scroll', this.onScroll);
+  },
+  mounted() {
+    this.offsetTop = (this.$el.offsetTop || 400) + 463;
   },
   data() {
     return {
+      offsetTop: 0,
+      sticky: false,
       columns: {},
       filters: {},
     }
   },
   methods: {
+    onScroll() {
+       this.sticky = window.pageYOffset > this.offsetTop;
+    },
     onFiltersChanged() {
       const filters = {};
       const columns = this.config.Filters.map(x => ({name: x, key: x}));

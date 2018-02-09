@@ -58,6 +58,20 @@ body::-webkit-scrollbar {
    display: none;
 }
 
+.ElasticFilterList_sticky {
+  position: fixed;
+  top: 0;
+  left: 32px;
+  right: 32px;
+  background-color: black;
+}
+.ElasticFilterList_sticky + .ElasticItemList {
+  margin-top: 463px;
+}
+.ElasticFilterList_sticky .ElasticFilterList__filters {
+  height: 50px;
+}
+
 
 .ElasticFilterList {
   display: flex;
