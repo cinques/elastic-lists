@@ -38,7 +38,7 @@ body::-webkit-scrollbar {
   height: 38px;
   line-height: 38px;
   
-  transition: height 0.3s ease, color 0.3s ease, background-color 0.3s ease;
+  transition: color 0.3s ease, background-color 0.3s ease;
 }
 .ElasticFilter:hover {
   color: white;
@@ -55,8 +55,7 @@ body::-webkit-scrollbar {
   max-width: 50px;
 }
 .ElasticFilter_empty:not(.ElasticFilter_active) {
-  height: 8px;
-  color: #4e485c;
+  display: none;
 }
 
 
