@@ -1,6 +1,7 @@
 Vue.component('type3', {
   template: `
     <div class="Type3">
+      <elastic-field-background-img class="Type3__background"/>
       <div class="Type3__header">
         <elastic-field class="Type3__header-elem1"/>
         <elastic-field class="Type3__header-elem2"/>

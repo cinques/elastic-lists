@@ -154,6 +154,11 @@ body {
 .ElasticField__li:hover {
   background-color: #8864db;
 }
+.ElasticFieldBackgroundImg {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
 
 
 .ElasticView {

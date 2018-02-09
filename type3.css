@@ -112,13 +112,13 @@ body::-webkit-scrollbar {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  position: relative;
   width: 400px;
   height: 200px;
   
   padding: 25px;
   
   font-size: 11px;
-  background: #403A4F;
   color: #9e9e9e;
   text-transform: uppercase;
 }
@@ -142,4 +142,14 @@ body::-webkit-scrollbar {
 }
 .Type3__footer-elem1:before {
   content: 'by\00a0'
+}
+.Type3__background.bg-img {
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  
+  opacity: 0.5;
 }
