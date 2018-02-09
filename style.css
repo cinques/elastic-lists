@@ -114,12 +114,7 @@ body {
   margin: 6px;
 }
 
-.ElasticField {
-  position: relative;
-  
-  cursor: pointer;
-  user-select: none;
-}
+
 .ElasticField__ul {
   display: none;
   position: absolute;
@@ -130,6 +125,7 @@ body {
   height: 200px;
   overflow-x: hidden;
   
+  cursor: pointer;
   color: white;
   font-size: 15px;
   text-transform: none;
@@ -141,6 +137,7 @@ body {
 }
 .ElasticField__text {
   display: inline-block;
+  cursor: pointer;
 }
 .ElasticField__text:hover ~ .ElasticField__ul {
   display: block;
@@ -150,6 +147,7 @@ body {
 }
 .ElasticField__li {
   padding: 4px;
+  cursor: pointer;
 }
 .ElasticField__li:hover {
   background-color: #8864db;
