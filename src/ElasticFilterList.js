@@ -1,7 +1,10 @@
 Vue.component('elastic-filter-list', {
   template: `
     <div class="ElasticFilterList">
-      <div class="ElasticFilterList__column" v-for="column of columns" :key="column.key">
+      <div class="ElasticFilterList__column"
+           v-for="(column, idx) of columns"
+           :style="{ flexGrow: config.FiltersRelation[idx] }"
+           :key="column.key">
         <div class="ElasticFilterList__header ellipsis" :title="column.name">{{column.name}}</div>
         <div class="ElasticFilterList__filters">
           <elastic-filter

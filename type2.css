@@ -67,7 +67,6 @@ body::-webkit-scrollbar {
   border-bottom: #4e485c 2px solid;
 }
 .ElasticFilterList__column {
-  width: 100%;
   overflow-x: hidden;
   
   font-size: 11px;
