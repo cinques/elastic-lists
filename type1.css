@@ -12,6 +12,9 @@ body::-webkit-scrollbar {
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+.hidden {
+  display: none !important;
+}
 
 .ElasticView {
   margin: 0 32px;

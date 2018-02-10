@@ -68,6 +68,8 @@ Vue.component('elastic-item-list', {
   
       const rootClone = root.cloneNode();
       rootClone.innerHTML = markup;
+  
+      rootClone.setAttribute(':class', '"now" + datum.now');
       
       if (raw) {
         rootClone.setAttribute('v-for', 'datum of filteredData');
