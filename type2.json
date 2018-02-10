@@ -15,7 +15,7 @@
     "bitrhdate": "1985-02-05",
     "height_cm": 185,
     "weight_kg": 80,
-    "weakfoot": "L",
+    "weakfoot": "black",
     "email": "email11212"
   },
   {
@@ -34,7 +34,7 @@
     "bitrhdate": "1987-06-24",
     "height_cm": 170,
     "weight_kg": 72,
-    "weakfoot": "R",
+    "weakfoot": "gray",
     "email": ""
   },
   {
@@ -53,7 +53,7 @@
     "bitrhdate": "1992-02-05",
     "height_cm": 175,
     "weight_kg": 68,
-    "weakfoot": "L",
+    "weakfoot": "black",
     "email": ""
   },
   {
@@ -72,7 +72,7 @@
     "bitrhdate": "1987-01-24",
     "height_cm": 182,
     "weight_kg": 86,
-    "weakfoot": "L",
+    "weakfoot": "black",
     "email": ""
   },
   {
@@ -91,7 +91,7 @@
     "bitrhdate": "1986-03-27",
     "height_cm": 193,
     "weight_kg": 92,
-    "weakfoot": "R",
+    "weakfoot": "black",
     "email": ""
   },
   {
@@ -110,7 +110,7 @@
     "bitrhdate": "1988-08-21",
     "height_cm": 185,
     "weight_kg": 79,
-    "weakfoot": "L",
+    "weakfoot": "black",
     "email": ""
   },
   {
@@ -129,7 +129,7 @@
     "bitrhdate": "1990-11-07",
     "height_cm": 193,
     "weight_kg": 76,
-    "weakfoot": "R",
+    "weakfoot": "black",
     "email": ""
   },
   {
@@ -148,7 +148,7 @@
     "bitrhdate": "1991-01-07",
     "height_cm": 173,
     "weight_kg": 76,
-    "weakfoot": "R",
+    "weakfoot": "black",
     "email": ""
   }
 ]
