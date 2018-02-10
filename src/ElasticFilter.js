@@ -10,7 +10,14 @@ Vue.component('elastic-filter', {
       <span class="ElasticFilter__name ellipsis" :title="name">{{name}}</span>
       <span class="ElasticFilter__number ellipsis" :title="number">{{number}}</span>
     </div>`,
-  props: ['name', 'number', 'canChangeVisible'],
+  props: {
+    name: String,
+    number: [String, Number],
+    canChangeVisible: {
+      type: Boolean,
+      default: true,
+    }
+  },
   data() {
     return {
       isActive: false,

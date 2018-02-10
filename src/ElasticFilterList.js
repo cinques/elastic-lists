@@ -14,7 +14,7 @@ Vue.component('elastic-filter-list', {
                :canChangeVisible="false"
             />
           </template>
-          <template v-else>
+          <div :class="{ hidden: sticky }">
             <div class="ElasticFilterList__filters-shadow"></div>
             <div class="ElasticFilterList__filters-content">
               <elastic-filter
@@ -25,7 +25,7 @@ Vue.component('elastic-filter-list', {
                 @onFilter="onFilter(column.key, ...arguments)"
               />
             </div>
-          </template>
+          </div>
         </div>
       </div>
     </div>`,

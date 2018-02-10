@@ -67,6 +67,7 @@ body::-webkit-scrollbar {
 }
 .ElasticFilterList__column {
   overflow-x: hidden;
+  flex-basis: 0;
   
   font-size: 11px;
   text-transform: uppercase;
@@ -154,7 +155,7 @@ body::-webkit-scrollbar {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 400px;
+  width: 396px;
   height: 200px;
   
   padding: 25px;
