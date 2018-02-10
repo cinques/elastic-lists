@@ -11,11 +11,12 @@
     "color_accent": "#FCAF17",
     "color_neutral": "#FFFFFF",
     "age": 32,
-    "league": "Spanish Primera División",
+    "league": "Spanish Primera Divisiï¿½n",
     "bitrhdate": "1985-02-05",
     "height_cm": 185,
     "weight_kg": 80,
-    "weakfoot": "L"
+    "weakfoot": "L",
+    "email": "email11212"
   },
   {
     "ID": 158023,
@@ -29,11 +30,12 @@
     "color_accent": "#A21F4B",
     "color_neutral": "#DEB406",
     "age": 30,
-    "league": "Spanish Primera División",
+    "league": "Spanish Primera Divisiï¿½n",
     "bitrhdate": "1987-06-24",
     "height_cm": 170,
     "weight_kg": 72,
-    "weakfoot": "R"
+    "weakfoot": "R",
+    "email": ""
   },
   {
     "ID": 190871,
@@ -51,25 +53,27 @@
     "bitrhdate": "1992-02-05",
     "height_cm": 175,
     "weight_kg": 68,
-    "weakfoot": "L"
+    "weakfoot": "L",
+    "email": ""
   },
   {
     "ID": 176580,
     "first_name": "Luis",
-    "second_name": "Suárez",
-    "game_name": "L. Suárez",
-    "full_name": "Luis Suárez",
+    "second_name": "Suï¿½rez",
+    "game_name": "L. Suï¿½rez",
+    "full_name": "Luis Suï¿½rez",
     "club": "FC Barcelona",
     "club_logo": "https://cdn.sofifa.org/18/teams/241.png",
     "color_primary": "#0053A0",
     "color_accent": "#A21F4B",
     "color_neutral": "#DEB406",
     "age": 30,
-    "league": "Spanish Primera División",
+    "league": "Spanish Primera Divisiï¿½n",
     "bitrhdate": "1987-01-24",
     "height_cm": 182,
     "weight_kg": 86,
-    "weakfoot": "L"
+    "weakfoot": "L",
+    "email": ""
   },
   {
     "ID": 167495,
@@ -87,7 +91,8 @@
     "bitrhdate": "1986-03-27",
     "height_cm": 193,
     "weight_kg": 92,
-    "weakfoot": "R"
+    "weakfoot": "R",
+    "email": ""
   },
   {
     "ID": 188545,
@@ -105,7 +110,8 @@
     "bitrhdate": "1988-08-21",
     "height_cm": 185,
     "weight_kg": 79,
-    "weakfoot": "L"
+    "weakfoot": "L",
+    "email": ""
   },
   {
     "ID": 193080,
@@ -123,7 +129,8 @@
     "bitrhdate": "1990-11-07",
     "height_cm": 193,
     "weight_kg": 76,
-    "weakfoot": "R"
+    "weakfoot": "R",
+    "email": ""
   },
   {
     "ID": 183277,
@@ -141,6 +148,7 @@
     "bitrhdate": "1991-01-07",
     "height_cm": 173,
     "weight_kg": 76,
-    "weakfoot": "R"
+    "weakfoot": "R",
+    "email": ""
   }
 ]
