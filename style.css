@@ -104,7 +104,7 @@ body {
 }
 
 .ElasticItem {
-  margin: 6px;
+  position: relative;
 }
 
 

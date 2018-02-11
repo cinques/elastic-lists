@@ -57,7 +57,7 @@ Vue.component('app', {
       zip.file('data.js', 'window.data = ' + JSON.stringify(this.config.JSON));
 
       const itemTemplate = this.$refs.itemList.buildCardTemplate(true);
-      const config = {...this.config, JSON: [], Style: ''};
+      const config = Object.assign({}, this.config, { JSON: [], Style: ''});
 
       const main = dist.main
         .replace('${config}', JSON.stringify(config))
