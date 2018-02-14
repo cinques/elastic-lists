@@ -103,6 +103,7 @@ body::-webkit-scrollbar {
   
   color: #4e485c;
   border-bottom: #4e485c 1px solid;
+  cursor: pointer;
 }
 .ElasticFilterList__filters {
   position: relative;

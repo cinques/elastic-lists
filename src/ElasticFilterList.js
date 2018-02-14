@@ -5,12 +5,12 @@ Vue.component('elastic-filter-list', {
            v-for="(column, idx) of columns"
            :style="{ flexGrow: config.FiltersRelation[idx] }"
            :key="column.key">
-        <div class="ElasticFilterList__header ellipsis" :title="column.name">{{column.name}}</div>
+        <div class="ElasticFilterList__header ellipsis" :title="column.name" @click="onSort(column)">{{column.name}}</div>
         <div class="ElasticFilterList__filters">
           <template v-if="sticky">
             <elastic-filter
                :name="filters[column.key][0] || '- Все -'"
-               :number="column.filters[filters[column.key][0]]"
+               :number="column.filters.get(filters[column.key][0])"
                :canChangeVisible="false"
             />
           </template>
@@ -18,7 +18,7 @@ Vue.component('elastic-filter-list', {
             <div class="ElasticFilterList__filters-shadow"></div>
             <div class="ElasticFilterList__filters-content">
               <elastic-filter
-                v-for="(number, filter) of column.filters"
+                v-for="([filter, number], _) of [...column.filters]"
                 :key="filter"
                 :name="filter"
                 :number="number"
@@ -44,25 +44,43 @@ Vue.component('elastic-filter-list', {
     return {
       offsetTop: 0,
       sticky: false,
-      columns: {},
+      columns: [],
       filters: {},
     }
   },
   methods: {
+    onSort(column) {
+      function compare(entry1, entry2) {
+        const a = entry1[sortType];
+        const b = entry2[sortType];
+        
+        if (sortType === 1) {
+          // количество элементов сортируем по убыванию
+          return b - a;
+        }
+        
+        // все остальное по возрастанию
+        return a > b ? 1 : a < b ? -1 : 0;
+      }
+      
+      const sortType = Number(!column.sortType);
+      column.sortType = sortType;
+      column.filters = new Map([...column.filters].sort(compare));
+    },
     onScroll() {
        this.sticky = window.pageYOffset > this.offsetTop;
     },
     onFiltersChanged() {
       const filters = {};
-      const columns = this.config.Filters.map(x => ({name: x, key: x}));
+      const columns = this.config.Filters.map(x => ({name: x, key: x, sortType: 0}));
 
       for (const column of columns) {
         const key = column.key;
-        const columnFilters = {};
+        const columnFilters = new Map();
 
         for (const datum of this.config.JSON) {
           const value = datum[key];
-          columnFilters[value] = (columnFilters[value] + 1) || 1;
+          columnFilters.set(value, (columnFilters.get(value) + 1) || 1);
         }
 
         column.filters = columnFilters;
@@ -89,9 +107,7 @@ Vue.component('elastic-filter-list', {
     recalculate() {
       // Обнуляем счетчики фильтров
       for (const column of this.columns) {
-        Object.keys(column.filters).forEach(filter => {
-          column.filters[filter] = 0;
-        });
+        column.filters = new Map([...column.filters.keys()].map(key => [key, 0]));
       }
 
       for (const datum of this.config.JSON) {
@@ -107,7 +123,7 @@ Vue.component('elastic-filter-list', {
 
           if (datum.__filtered__) {
             const filter = datum[columnKey];
-            column.filters[filter] += 1;
+            column.filters.set(filter, column.filters.get(filter) + 1);
           }
         }
       }
