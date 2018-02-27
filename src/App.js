@@ -22,7 +22,8 @@ Vue.component('app', {
       <link v-if="config.Style"
             rel="stylesheet"
             :href="'data:text/css;charset=UTF-8,' + encodeURIComponent(config.Style)">
-      <div class="ElasticView" :class="{ hidden: !config.Style.length }">
+      
+      <div class="ElasticView" v-show="config.Style.length">
         <div class="Header">{{config.DatasetName}}</div>
         <elastic-filter-list :config="config"/>
         <elastic-item-list ref="itemList" :config="config"/>
@@ -32,7 +33,6 @@ Vue.component('app', {
     EventBus.$on('onFileChange', (json) => {
       this.config.JSON = json;
       this.config.Filters = Object.keys(json[0]).slice(0, this.config.FiltersRelation.length);
-      EventBus.$emit('onFiltersChanged');
     })
   },
   data() {

@@ -103,7 +103,6 @@ Vue.component('elastic-builder', {
     },
     onSelectFilter() {
       this.config.Filters = [...this.$refs.filters.querySelectorAll('select')].map(x => x.value);
-      EventBus.$emit('onFiltersChanged');
     },
   }
 });

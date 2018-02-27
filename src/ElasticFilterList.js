@@ -31,10 +31,9 @@ Vue.component('elastic-filter-list', {
     </div>`,
   props: ['config'],
   created() {
-    EventBus.$on('onFiltersChanged', this.onFiltersChanged.bind(this));
     window.addEventListener('scroll', this.onScroll);
   },
-  destroyed () {
+  destroyed() {
     window.removeEventListener('scroll', this.onScroll);
   },
   mounted() {
@@ -46,6 +45,34 @@ Vue.component('elastic-filter-list', {
       sticky: false,
       columns: [],
       filters: {},
+    }
+  },
+  watch: {
+    'config.Filters'() {
+      const filters = {};
+      const columns = this.config.Filters.map(x => (
+        {
+          key: x,
+          name: x,
+          sortType: 0,
+        }
+      ));
+
+      for (const column of columns) {
+        const key = column.key;
+        const columnFilters = new Map();
+
+        for (const datum of this.config.JSON) {
+          const value = datum[key];
+          columnFilters.set(value, (columnFilters.get(value) + 1) || 1);
+        }
+
+        column.filters = columnFilters;
+        filters[key] = [];
+      }
+
+      this.columns = columns;
+      this.filters = filters;
     }
   },
   methods: {
@@ -69,26 +96,6 @@ Vue.component('elastic-filter-list', {
     },
     onScroll() {
        this.sticky = window.pageYOffset > this.offsetTop;
-    },
-    onFiltersChanged() {
-      const filters = {};
-      const columns = this.config.Filters.map(x => ({name: x, key: x, sortType: 0}));
-
-      for (const column of columns) {
-        const key = column.key;
-        const columnFilters = new Map();
-
-        for (const datum of this.config.JSON) {
-          const value = datum[key];
-          columnFilters.set(value, (columnFilters.get(value) + 1) || 1);
-        }
-
-        column.filters = columnFilters;
-        filters[key] = []
-      }
-
-      this.columns = columns;
-      this.filters = filters;
     },
     onFilter(key, value, isActive) {
       if (isActive) {
