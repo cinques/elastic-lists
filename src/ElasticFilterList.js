@@ -105,7 +105,13 @@ Vue.component('elastic-filter-list', {
 
         for (const datum of this.config.JSON) {
           const value = datum[key];
-          columnFilters.set(value, (columnFilters.get(value) + 1) || 1);
+          if (Array.isArray(value)) {
+            for (const valueItem of value) {
+              columnFilters.set(valueItem, (columnFilters.get(valueItem) + 1) || 1);
+            }
+          } else {
+            columnFilters.set(value, (columnFilters.get(value) + 1) || 1);
+          }
         }
 
         column.filters = columnFilters;
@@ -128,14 +134,31 @@ Vue.component('elastic-filter-list', {
 
           datum.__filtered__ = true;
           for (const [filterKey, filter] of Object.entries(this.filters)) {
-            if (filter.length && filter.every(x => x != datum[filterKey])) {
-              datum.__filtered__ = false;
+            if (!filter.length) {
+              continue;
+            }
+
+            const value = datum[filterKey];
+            if (Array.isArray(value)) {
+              if (value.every(valueItem => filter.every(x => x != valueItem))) {
+                datum.__filtered__ = false;
+              }
+            } else {
+              if (filter.every(x => x != value)) {
+                datum.__filtered__ = false;
+              }
             }
           }
 
           if (datum.__filtered__) {
             const filter = datum[columnKey];
-            column.filters.set(filter, column.filters.get(filter) + 1);
+            if (Array.isArray(filter)) {
+              for (const filterItem of filter) {
+                column.filters.set(filterItem, column.filters.get(filterItem) + 1);
+              }
+            } else {
+              column.filters.set(filter, column.filters.get(filter) + 1);
+            }
           }
         }
       }
