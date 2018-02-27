@@ -53,43 +53,6 @@ Vue.component('elastic-filter-list', {
     this.offsetTop = (this.$el.offsetTop || 400) + 463;
   },
   methods: {
-    sortFilters(filters, sortType) {
-      function compare(entry1, entry2) {
-        const a = entry1[sortType];
-        const b = entry2[sortType];
-
-        if (sortType === 1) {
-          // количество элементов сортируем по убыванию
-          return b - a;
-        }
-
-        // все остальное по возрастанию
-        return a > b ? 1 : a < b ? -1 : 0;
-      }
-
-      return new Map([...filters].sort(compare));
-    },
-    onSort(column) {
-      column.sortType = Number(!column.sortType);
-      column.filters = this.sortFilters(column.filters, column.sortType);
-    },
-    onScroll() {
-       this.sticky = window.pageYOffset > this.offsetTop;
-    },
-    onFilter(key, value, isActive) {
-      if (isActive) {
-        this.filters[key].push(value);
-      } else {
-        const idx = this.filters[key].indexOf(value);
-        if (idx !== -1) {
-          this.filters[key].splice(idx, 1);
-        }
-      }
-
-      this.recalculate();
-      EventBus.$emit('onFilter');
-    },
-
     calculateFilters() {
       const filters = {};
       const columns = this.config.Filters.map(x => (
@@ -115,7 +78,7 @@ Vue.component('elastic-filter-list', {
           }
         }
 
-        column.filters = this.sortFilters(columnFilters, column.sortType);
+        column.filters = this.$_sortFilters(columnFilters, column.sortType);
         filters[key] = [];
       }
 
@@ -163,6 +126,46 @@ Vue.component('elastic-filter-list', {
           }
         }
       }
+    },
+
+    onScroll() {
+      this.sticky = window.pageYOffset > this.offsetTop;
+    },
+
+    onFilter(key, value, isActive) {
+      if (isActive) {
+        this.filters[key].push(value);
+      } else {
+        const idx = this.filters[key].indexOf(value);
+        if (idx !== -1) {
+          this.filters[key].splice(idx, 1);
+        }
+      }
+
+      this.recalculate();
+      EventBus.$emit('onFilter');
+    },
+
+    onSort(column) {
+      column.sortType = Number(!column.sortType);
+      column.filters = this.$_sortFilters(column.filters, column.sortType);
+    },
+
+    $_sortFilters(filters, sortType) {
+      function compare(entry1, entry2) {
+        const a = entry1[sortType];
+        const b = entry2[sortType];
+
+        if (sortType === 1) {
+          // количество элементов сортируем по убыванию
+          return b - a;
+        }
+
+        // все остальное по возрастанию
+        return a > b ? 1 : a < b ? -1 : 0;
+      }
+
+      return new Map([...filters].sort(compare));
     },
   },
 });
