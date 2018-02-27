@@ -23,12 +23,6 @@ Vue.component('elastic-item-list', {
     }
   },
   created() {
-    EventBus.$on('onFileChange', (json) => {
-      this.filteredData = json;
-      this.$nextTick(() => {
-        this.cardTemplate = this.buildCardTemplate();
-      })
-    });
     EventBus.$on('onFilter', () => {
       this.filteredData = this.config.JSON.filter(x => x.__filtered__);
     });
@@ -37,6 +31,12 @@ Vue.component('elastic-item-list', {
     })
   },
   watch: {
+    'config.JSON'() {
+      this.filteredData = this.config.JSON;
+      this.$nextTick(() => {
+        this.cardTemplate = this.buildCardTemplate();
+      })
+    },
     'config.CardType'() {
       this.$nextTick(() => { this.cardTemplate = this.buildCardTemplate() });
     }

@@ -30,15 +30,6 @@ Vue.component('elastic-filter-list', {
       </div>
     </div>`,
   props: ['config'],
-  created() {
-    window.addEventListener('scroll', this.onScroll);
-  },
-  destroyed() {
-    window.removeEventListener('scroll', this.onScroll);
-  },
-  mounted() {
-    this.offsetTop = (this.$el.offsetTop || 400) + 463;
-  },
   data() {
     return {
       offsetTop: 0,
@@ -49,31 +40,18 @@ Vue.component('elastic-filter-list', {
   },
   watch: {
     'config.Filters'() {
-      const filters = {};
-      const columns = this.config.Filters.map(x => (
-        {
-          key: x,
-          name: x,
-          sortType: 0,
-        }
-      ));
-
-      for (const column of columns) {
-        const key = column.key;
-        const columnFilters = new Map();
-
-        for (const datum of this.config.JSON) {
-          const value = datum[key];
-          columnFilters.set(value, (columnFilters.get(value) + 1) || 1);
-        }
-
-        column.filters = columnFilters;
-        filters[key] = [];
-      }
-
-      this.columns = columns;
-      this.filters = filters;
+      this.calculateFilters();
     }
+  },
+  created() {
+    this.calculateFilters();
+    window.addEventListener('scroll', this.onScroll);
+  },
+  destroyed() {
+    window.removeEventListener('scroll', this.onScroll);
+  },
+  mounted() {
+    this.offsetTop = (this.$el.offsetTop || 400) + 463;
   },
   methods: {
     onSort(column) {
@@ -109,6 +87,33 @@ Vue.component('elastic-filter-list', {
 
       this.recalculate();
       EventBus.$emit('onFilter');
+    },
+
+    calculateFilters() {
+      const filters = {};
+      const columns = this.config.Filters.map(x => (
+        {
+          key: x,
+          name: x,
+          sortType: 0,
+        }
+      ));
+
+      for (const column of columns) {
+        const key = column.key;
+        const columnFilters = new Map();
+
+        for (const datum of this.config.JSON) {
+          const value = datum[key];
+          columnFilters.set(value, (columnFilters.get(value) + 1) || 1);
+        }
+
+        column.filters = columnFilters;
+        filters[key] = [];
+      }
+
+      this.columns = columns;
+      this.filters = filters;
     },
 
     recalculate() {

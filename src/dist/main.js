@@ -7,13 +7,10 @@ Vue.component('elastic-item-list', {
             </div>`,
   data() {
     return {
-      filteredData: [],
+      filteredData: this.config.JSON,
     }
   },
   created() {
-    EventBus.$on('onFileChange', (json) => {
-      this.filteredData = json;
-    });
     EventBus.$on('onFilter', () => {
       this.filteredData = this.config.JSON.filter(x => x.__filtered__);
     });
@@ -30,10 +27,7 @@ Vue.component('app', {
       </div>
     </div>`,
   created() {
-    EventBus.$on('onFileChange', (json) => {
-      this.config.JSON = json;
-      EventBus.$emit('onFiltersChanged');
-    })
+    this.config.JSON = data;
   },
   data() {
     return {
@@ -49,5 +43,3 @@ new Vue({
   el: '#app',
   template: '<app/>',
 });
-
-EventBus.$emit('onFileChange', data);
