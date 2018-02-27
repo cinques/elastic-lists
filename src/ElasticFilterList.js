@@ -7,14 +7,13 @@ Vue.component('elastic-filter-list', {
            :key="column.key">
         <div class="ElasticFilterList__header ellipsis" :title="column.name" @click="onSort(column)">{{column.name}}</div>
         <div class="ElasticFilterList__filters">
-          <template v-if="sticky">
-            <elastic-filter
-               :name="filters[column.key][0] || '- Все -'"
-               :number="column.filters.get(filters[column.key][0])"
-               :canChangeVisible="false"
-            />
-          </template>
-          <div :class="{ hidden: sticky }">
+          <elastic-filter
+            v-show="sticky"
+            :name="filters[column.key][0] || '- Все -'"
+            :number="column.filters.get(filters[column.key][0])"
+            :canChangeVisible="false"
+          />
+          <div v-show="!sticky">
             <div class="ElasticFilterList__filters-shadow"></div>
             <div class="ElasticFilterList__filters-content">
               <elastic-filter
@@ -32,10 +31,10 @@ Vue.component('elastic-filter-list', {
   props: ['config'],
   data() {
     return {
-      offsetTop: 0,
-      sticky: false,
       columns: [],
       filters: {},
+      offsetTop: 0,
+      sticky: false,
     }
   },
   watch: {
@@ -54,23 +53,25 @@ Vue.component('elastic-filter-list', {
     this.offsetTop = (this.$el.offsetTop || 400) + 463;
   },
   methods: {
-    onSort(column) {
+    sortFilters(filters, sortType) {
       function compare(entry1, entry2) {
         const a = entry1[sortType];
         const b = entry2[sortType];
-        
+
         if (sortType === 1) {
           // количество элементов сортируем по убыванию
           return b - a;
         }
-        
+
         // все остальное по возрастанию
         return a > b ? 1 : a < b ? -1 : 0;
       }
-      
-      const sortType = Number(!column.sortType);
-      column.sortType = sortType;
-      column.filters = new Map([...column.filters].sort(compare));
+
+      return new Map([...filters].sort(compare));
+    },
+    onSort(column) {
+      column.sortType = Number(!column.sortType);
+      column.filters = this.sortFilters(column.filters, column.sortType);
     },
     onScroll() {
        this.sticky = window.pageYOffset > this.offsetTop;
@@ -114,7 +115,7 @@ Vue.component('elastic-filter-list', {
           }
         }
 
-        column.filters = columnFilters;
+        column.filters = this.sortFilters(columnFilters, column.sortType);
         filters[key] = [];
       }
 
