@@ -1,4 +1,4 @@
-Vue.component('elastic-filter-list', {
+Vue.component('ElasticFilterList', {
   template: `
     <div class="ElasticFilterList" :class="{ ElasticFilterList_sticky: sticky }">
       <div class="ElasticFilterList__column"
@@ -7,7 +7,7 @@ Vue.component('elastic-filter-list', {
            :key="column.key">
         <div class="ElasticFilterList__header ellipsis" :title="column.name" @click="onSort(column)">{{column.name}}</div>
         <div class="ElasticFilterList__filters">
-          <elastic-filter
+          <ElasticFilter
             v-show="sticky"
             :name="filters[column.key][0] || '- Все -'"
             :number="column.filters.get(filters[column.key][0])"
@@ -16,7 +16,7 @@ Vue.component('elastic-filter-list', {
           <div v-show="!sticky">
             <div class="ElasticFilterList__filters-shadow"></div>
             <div class="ElasticFilterList__filters-content">
-              <elastic-filter
+              <ElasticFilter
                 v-for="([filter, number], _) of [...column.filters]"
                 :key="filter"
                 :name="filter"

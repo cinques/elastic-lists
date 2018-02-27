@@ -1,4 +1,4 @@
-Vue.component('elastic-builder', {
+Vue.component('ElasticBuilder', {
   template: `
     <div class="ElasticBuilder">
       <div class="ElasticBuilder__head">

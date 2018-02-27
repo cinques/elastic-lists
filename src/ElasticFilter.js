@@ -1,4 +1,4 @@
-Vue.component('elastic-filter', {
+Vue.component('ElasticFilter', {
   template: `
     <div class="ElasticFilter"
          :class="{

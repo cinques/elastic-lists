@@ -1,18 +1,18 @@
 Vue.component('type1', {
   template: `
     <div class="Type1">
-      <elastic-field-background-img class="Type1__background"/>
+      <ElasticFieldBgImg class="Type1__background"/>
       <div class="Type1__header">
-        <elastic-field class="Type1__header-elem1"/>
+        <ElasticField class="Type1__header-elem1"/>
       </div>
       
       <div class="Type1__content">
-        <elastic-field class="Type1__content-elem1"/>
+        <ElasticField class="Type1__content-elem1"/>
         <div class="Type1__content-elem2">
-          <elastic-field class="Type1__content-elem2-1"/>
-          <elastic-field class="Type1__content-elem2-2"/>
+          <ElasticField class="Type1__content-elem2-1"/>
+          <ElasticField class="Type1__content-elem2-2"/>
         </div>
-        <elastic-field class="Type1__content-elem3"/>
+        <ElasticField class="Type1__content-elem3"/>
       </div>
       
       <div class="Type1__footer">
@@ -21,10 +21,10 @@ Vue.component('type1', {
           <div class="Type1__maps">Карты</div>
         </div>
         <div class="Type1__footer-links">
-          <elastic-field-link class="Type1__wiki" text="wiki"/>
+          <ElasticFieldLink class="Type1__wiki" text="wiki"/>
           <div class="Type1__footer-links-right-column">
-            <elastic-field-link class="Type1__mende" text="менде"/>
-            <elastic-field-link class="Type1__yandex" text="яндекс"/>
+            <ElasticFieldLink class="Type1__mende" text="менде"/>
+            <ElasticFieldLink class="Type1__yandex" text="яндекс"/>
           </div>
          </div>
       </div>

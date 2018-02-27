@@ -1,4 +1,4 @@
-Vue.component('elastic-item', {
+Vue.component('ElasticItem', {
   props: ['render', 'staticRenderFns', 'datum'],
   render(h) {
     if (!this.$options.staticRenderFns) {

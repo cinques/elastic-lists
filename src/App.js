@@ -14,10 +14,10 @@ Promise.all(files.map(url => fetch(url).then(resp => resp.text())))
     };
   });
 
-Vue.component('app', {
+Vue.component('App', {
   template: `
     <div id="app">
-      <elastic-builder :config="config" @onBuild="build" />
+      <ElasticBuilder :config="config" @onBuild="build" />
       
       <link v-if="config.Style"
             rel="stylesheet"
@@ -25,8 +25,8 @@ Vue.component('app', {
       
       <div class="ElasticView" v-show="config.Style.length">
         <div class="Header">{{config.DatasetName}}</div>
-        <elastic-filter-list :config="config"/>
-        <elastic-item-list ref="itemList" :config="config"/>
+        <ElasticFilterList :config="config"/>
+        <ElasticItemList ref="itemList" :config="config"/>
       </div>
     </div>`,
   created() {

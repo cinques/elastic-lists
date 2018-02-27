@@ -1,4 +1,4 @@
-Vue.component('elastic-field-icon', {
+Vue.component('ElasticFieldIcon', {
    template: `
     <div class="ElasticField" :class="'ElasticItem__' + selected">
       <img class="ElasticField__text" :src="selected">

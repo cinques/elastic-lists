@@ -1,4 +1,4 @@
-Vue.component('elastic-field-color', {
+Vue.component('ElasticFieldColor', {
    template: `
     <div class="ElasticField" :class="'ElasticItem__' + selected">
       <div class="ElasticField__text">*</div>

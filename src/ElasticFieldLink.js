@@ -1,4 +1,4 @@
-Vue.component('elastic-field-link', {
+Vue.component('ElasticFieldLink', {
   template: `
     <div class="ElasticField" :class="'ElasticItem__' + selected">
       <a class="ElasticField__text" :href="selected">{{text}}</a>

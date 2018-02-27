@@ -1,4 +1,4 @@
-Vue.component('elastic-field-background-color', {
+Vue.component('ElasticFieldBgColor', {
    template: `
     <div class="ElasticField ElasticFieldBackgroundImg" :class="'ElasticItem__' + selected">
       <div class="ElasticField__text">bg</div>

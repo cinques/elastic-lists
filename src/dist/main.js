@@ -1,4 +1,4 @@
-Vue.component('elastic-item-list', {
+Vue.component('ElasticItemList', {
   props: ['config'],
   template: `<div class="ElasticItemList">
               <template v-if="filteredData.length">
@@ -17,13 +17,13 @@ Vue.component('elastic-item-list', {
   },
 });
 
-Vue.component('app', {
+Vue.component('App', {
   template: `
     <div id="app">
       <div class="ElasticView">
         <div class="Header">{{config.DatasetName}}</div>
-        <elastic-filter-list :config="config"/>
-        <elastic-item-list ref="itemList" :config="config"/>
+        <ElasticFilterList :config="config"/>
+        <ElasticItemList ref="itemList" :config="config"/>
       </div>
     </div>`,
   created() {
@@ -41,5 +41,5 @@ window.EventBus = new Vue();
 
 new Vue({
   el: '#app',
-  template: '<app/>',
+  template: '<App/>',
 });

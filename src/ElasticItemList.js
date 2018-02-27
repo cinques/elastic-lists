@@ -1,4 +1,4 @@
-Vue.component('elastic-item-list', {
+Vue.component('ElasticItemList', {
   template: `
     <div class="ElasticItemList">
       <template v-if="filteredData.length">
@@ -7,7 +7,7 @@ Vue.component('elastic-item-list', {
                    :is="config.CardType"
                    :model="filteredData[0]" />
         <template v-if="cardTemplate">
-          <elastic-item v-for="datum of filteredData"
+          <ElasticItem v-for="datum of filteredData"
                      :key="datum.__id__"
                      :datum="datum"
                      :render="cardTemplate.render"
