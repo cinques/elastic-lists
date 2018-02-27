@@ -108,6 +108,9 @@ body {
 }
 
 
+.ElasticField {
+  display: inline-block;
+}
 .ElasticField__ul {
   display: none;
   position: absolute;
