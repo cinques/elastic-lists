@@ -30,14 +30,6 @@ Vue.component('ElasticItemList', {
 
     return provided;
   },
-  created() {
-    EventBus.$on('onFilter', () => {
-      this.filteredData = this.config.JSON.filter(x => x.__filtered__);
-    });
-    EventBus.$on('onFieldChange', () => {
-      this.cardTemplate = this.buildCardTemplate();
-    })
-  },
   watch: {
     'config.JSON'() {
       this.filteredData = this.config.JSON;
@@ -48,6 +40,14 @@ Vue.component('ElasticItemList', {
     'config.CardType'() {
       this.$nextTick(() => { this.cardTemplate = this.buildCardTemplate() });
     }
+  },
+  created() {
+    EventBus.$on('onFilter', () => {
+      this.filteredData = this.config.JSON.filter(x => x.__filtered__);
+    });
+    EventBus.$on('onFieldChange', () => {
+      this.cardTemplate = this.buildCardTemplate();
+    })
   },
   methods: {
     buildCardTemplate(raw) {
