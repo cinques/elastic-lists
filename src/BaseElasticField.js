@@ -12,7 +12,12 @@ Vue.component('BaseElasticField', {
         </li>
       </ul>
     </div>`,
-  inject: ['model'],
+  inject: {
+    model: {
+      type: Array,
+      required: true,
+    },
+  },
   data() {
     return {
       selected: this.model[0],

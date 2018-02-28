@@ -12,7 +12,9 @@ Vue.component('ElasticFieldLink', {
       </BaseElasticField>
     </div>
   `,
-  props: ['text'],
+  props: {
+    text: String,
+  },
   methods: {
     getTemplate() {
       const base = this.$refs.base;

@@ -12,7 +12,7 @@ Vue.component('ElasticFilter', {
     </div>`,
   props: {
     name: [String, Number],
-    number: [String, Number],
+    number: Number,
     canChangeVisible: {
       type: Boolean,
       default: true,

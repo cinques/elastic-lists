@@ -15,7 +15,12 @@ Vue.component('ElasticItemList', {
         </template>
       </template>
     </div>`,
-  props: ['config'],
+  props: {
+    config: {
+      type: Object,
+      required: true,
+    },
+  },
   data() {
     return {
       filteredData: [],

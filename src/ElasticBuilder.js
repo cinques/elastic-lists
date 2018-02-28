@@ -57,7 +57,12 @@ Vue.component('ElasticBuilder', {
         </div>
       </div>
     </div>`,
-  props: ['config'],
+  props: {
+    config: {
+      type: Object,
+      required: true,
+    },
+  },
   data() {
     return {
       cardType: 'type1',

@@ -28,7 +28,12 @@ Vue.component('ElasticFilterList', {
         </div>
       </div>
     </div>`,
-  props: ['config'],
+  props: {
+    config: {
+      type: Object,
+      required: true,
+    },
+  },
   data() {
     return {
       columns: [],
