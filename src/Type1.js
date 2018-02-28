@@ -29,5 +29,4 @@ Vue.component('type1', {
          </div>
       </div>
     </div>`,
-  props: ['model'],
 });

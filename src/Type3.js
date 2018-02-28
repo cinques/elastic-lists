@@ -16,5 +16,4 @@ Vue.component('type3', {
         <ElasticField class="Type3__footer-elem1"/>
       </div>
     </div>`,
-  props: ['model'],
 });

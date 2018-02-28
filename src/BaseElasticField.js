@@ -4,7 +4,7 @@ Vue.component('BaseElasticField', {
       <slot :selected="selected"></slot>
       <ul class="ElasticField__ul">
         <li 
-          v-for="field of Object.keys(model)"
+          v-for="field of model"
           class="ElasticField__li"
           @click="onFieldChange(field)"
         >
@@ -12,11 +12,10 @@ Vue.component('BaseElasticField', {
         </li>
       </ul>
     </div>`,
+  inject: ['model'],
   data() {
-    const model = this.$parent.$parent.model;
     return {
-      model,
-      selected: Object.keys(model)[0],
+      selected: this.model[0],
     }
   },
   methods: {

@@ -22,6 +22,14 @@ Vue.component('ElasticItemList', {
       cardTemplate: null,
     }
   },
+  provide() {
+    const provided = {};
+    Object.defineProperty(provided, 'model', {
+      get: () => Object.keys(this.filteredData[0]),
+    });
+
+    return provided;
+  },
   created() {
     EventBus.$on('onFilter', () => {
       this.filteredData = this.config.JSON.filter(x => x.__filtered__);
