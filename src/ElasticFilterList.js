@@ -1,6 +1,6 @@
 Vue.component('ElasticFilterList', {
   template: `
-    <div class="ElasticFilterList" :class="{ ElasticFilterList_sticky: sticky }">
+    <div class="ElasticFilterList" :class="{ 'ElasticFilterList--sticky': sticky }">
       <div class="ElasticFilterList__column"
            v-for="(column, idx) of columns"
            :style="{ flexGrow: config.FiltersRelation[idx] }"

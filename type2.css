@@ -127,7 +127,7 @@ body::-webkit-scrollbar {
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0,rgb(0,0,0) 100%);
 }
 
-.ElasticFilterList_sticky {
+.ElasticFilterList--sticky {
   position: fixed;
   z-index: 2;
   top: 0;
@@ -135,10 +135,10 @@ body::-webkit-scrollbar {
   right: 32px;
   background-color: black;
 }
-.ElasticFilterList_sticky + .ElasticItemList {
+.ElasticFilterList--sticky + .ElasticItemList {
   margin-top: 463px;
 }
-.ElasticFilterList_sticky .ElasticFilterList__filters {
+.ElasticFilterList--sticky .ElasticFilterList__filters {
   height: 50px;
 }
 
