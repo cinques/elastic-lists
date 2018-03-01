@@ -1,5 +1,6 @@
 [
   {
+    "id": 1,
     "type": "село",
     "name_mende": "Боченка",
     "houses_mende": 6,
@@ -17,6 +18,7 @@
     "url_mende": ""
   },
   {
+    "id": 2,
     "type": "деревня",
     "name_mende": "Зинкина",
     "houses_mende": "no data",
@@ -34,6 +36,7 @@
     "url_mende": ""
   },
   {
+    "id": 3,
     "type": "сельцо",
     "name_mende": "Ивашево",
     "houses_mende": 11,
@@ -51,6 +54,7 @@
     "url_mende": ""
   },
   {
+    "id": 4,
     "type": "деревня",
     "name_mende": "Колодкина",
     "houses_mende": 16,
@@ -68,6 +72,7 @@
     "url_mende": ""
   },
   {
+    "id": 5,
     "type": "погост",
     "name_mende": "Сазонов",
     "houses_mende": 7,
@@ -85,6 +90,7 @@
     "url_mende": ""
   },
   {
+    "id": 6,
     "type": "деревня",
     "name_mende": "Батранъ",
     "houses_mende": 5,
@@ -102,6 +108,7 @@
     "url_mende": ""
   },
   {
+    "id": 7,
     "type": "деревня",
     "name_mende": "Воробьева",
     "houses_mende": 13,
@@ -119,6 +126,79 @@
     "url_mende": ""
   },
   {
+    "id": 8,
+    "type": "село",
+    "name_mende": "Григорово",
+    "houses_mende": "no data",
+    "laity": "с. Григорово",
+    "laity_type": "Собор Петра и Павла",
+    "volost": "Югская",
+    "uyezd": "Пошехонский",
+    "map_coords_mende": "NW G3",
+    "now": 3,
+    "laity_img": "http://temples.ru/private/f000873/873_0280788b.jpg",
+    "lat": "",
+    "long": "",
+    "url_wiki": "http://temples.ru/card.php?ID=17166",
+    "url_yandex": "https://yandex.ru/maps/-/CBeNqKQOhC",
+    "url_mende": ""
+  },
+  {
+    "id": 9,
+    "type": "село",
+    "name_mende": "Григорово",
+    "houses_mende": "no data",
+    "laity": "с. Григорово",
+    "laity_type": "Собор Петра и Павла",
+    "volost": "Югская",
+    "uyezd": "Пошехонский",
+    "map_coords_mende": "NW G3",
+    "now": 3,
+    "laity_img": "http://temples.ru/private/f000873/873_0280788b.jpg",
+    "lat": "",
+    "long": "",
+    "url_wiki": "http://temples.ru/card.php?ID=17166",
+    "url_yandex": "https://yandex.ru/maps/-/CBeNqKQOhC",
+    "url_mende": ""
+  },
+  {
+    "id": 10,
+    "type": "село",
+    "name_mende": "Григорово",
+    "houses_mende": "no data",
+    "laity": "с. Григорово",
+    "laity_type": "Собор Петра и Павла",
+    "volost": "Югская",
+    "uyezd": "Пошехонский",
+    "map_coords_mende": "NW G3",
+    "now": 3,
+    "laity_img": "http://temples.ru/private/f000873/873_0280788b.jpg",
+    "lat": "",
+    "long": "",
+    "url_wiki": "http://temples.ru/card.php?ID=17166",
+    "url_yandex": "https://yandex.ru/maps/-/CBeNqKQOhC",
+    "url_mende": ""
+  },
+  {
+    "id": 11,
+    "type": "село",
+    "name_mende": "Григорово",
+    "houses_mende": "no data",
+    "laity": "с. Григорово",
+    "laity_type": "Собор Петра и Павла",
+    "volost": "Югская",
+    "uyezd": "Пошехонский",
+    "map_coords_mende": "NW G3",
+    "now": 3,
+    "laity_img": "http://temples.ru/private/f000873/873_0280788b.jpg",
+    "lat": "",
+    "long": "",
+    "url_wiki": "http://temples.ru/card.php?ID=17166",
+    "url_yandex": "https://yandex.ru/maps/-/CBeNqKQOhC",
+    "url_mende": ""
+  },
+  {
+    "id": 12,
     "type": "село",
     "name_mende": "Григорово",
     "houses_mende": "no data",
