@@ -38,8 +38,8 @@ Vue.component('ElasticBuilder', {
         </label>
       </div>
       
-      <div class="ElasticBuilder__filters" ref="filters">
-        <label v-if="fields.length" v-for="(relation, idx) of config.FiltersRelation">
+      <div v-if="fields.length" class="ElasticBuilder__filters" ref="filters">
+        <label v-for="(relation, idx) of config.FiltersRelation" :key="idx">
           <div class="ElasticBuilder__label-text">F{{idx}}</div>
           <select class="ElasticBuilder__label-option" @change="onSelectFilter">
             <option v-for="(field, fieldIdx) of fields" :value="field" :selected="fieldIdx === idx">
