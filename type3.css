@@ -98,6 +98,9 @@ body::-webkit-scrollbar {
   color: white;
 }
 .ElasticFilterList__header {
+  display: flex;
+  justify-content: space-between;
+  
   height: 26px;
   line-height: 26px;
   
