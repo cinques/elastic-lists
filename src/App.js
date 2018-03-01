@@ -32,7 +32,11 @@ Vue.component('App', {
   created() {
     EventBus.$on('onFileChange', (json) => {
       this.config.JSON = json;
-      this.config.Filters = Object.keys(json[0]).slice(0, this.config.FiltersRelation.length);
+
+      const fields = Object.keys(json[0]);
+      this.config.Filters.forEach((filter, i) => {
+        filter.name = fields[i];
+      });
     })
   },
   data() {
@@ -40,8 +44,22 @@ Vue.component('App', {
       config: {
         DatasetName: 'Header',
         CardType: 'type1',
-        FiltersRelation: [1, 1, 1],
-        Filters: [],
+        Filters: [{
+          name: null,
+          ratio: 1,
+          sortType: 0,
+          sortLock: false,
+        }, {
+          name: null,
+          ratio: 1,
+          sortType: 0,
+          sortLock: false,
+        }, {
+          name: null,
+          ratio: 1,
+          sortType: 0,
+          sortLock: false,
+        }],
         JSON: [],
         Style: '',
       },

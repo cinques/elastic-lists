@@ -88,9 +88,7 @@ body {
   display: flex;
   justify-content: space-between;
 }
-.ElasticBuilder__filters > label {
-  width: 100%;
-}
+.ElasticBuilder__filters > label,
 .ElasticBuilder__filters .ElasticBuilder__label-option {
   width: 100%;
 }
@@ -99,6 +97,21 @@ body {
 .ElasticBuilder__style .ElasticBuilder__label-option {
   text-transform: lowercase;
   cursor: pointer;
+}
+.ElasticBuilder__filters .ElasticBuilder__label-text {
+  display: flex;
+  justify-content: space-between;
+}
+.ElasticBuilder__filter-sort-type {
+  margin-right: 2px;
+}
+.ElasticBuilder__filter-sort-type,
+.ElasticBuilder__filter-sort-lock {
+  display: inline-block;
+  cursor: pointer;
+}
+.ElasticBuilder__filter-sort-lock:not(.is-active) {
+  color: #9e9e9e;
 }
 
 .ElasticItem {

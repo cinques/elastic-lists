@@ -3,7 +3,7 @@ Vue.component('ElasticFilterList', {
     <div class="ElasticFilterList" :class="{ 'ElasticFilterList--sticky': sticky }">
       <div class="ElasticFilterList__column"
            v-for="(column, idx) of columns"
-           :style="{ flexGrow: config.FiltersRelation[idx] }"
+           :style="{ flexGrow: config.Filters[idx].ratio }"
            :key="column.key">
         <div class="ElasticFilterList__header ellipsis" :title="column.name" @click="onSort(column)">
           <div class="ElasticFilterList__column-name">{{column.name}}</div>
@@ -46,8 +46,11 @@ Vue.component('ElasticFilterList', {
     }
   },
   watch: {
-    'config.Filters'() {
-      this.calculateFilters();
+    'config.Filters': {
+      handler() {
+        this.calculateFilters();
+      },
+      deep: true,
     }
   },
   created() {
@@ -63,13 +66,7 @@ Vue.component('ElasticFilterList', {
   methods: {
     calculateFilters() {
       const filters = {};
-      const columns = this.config.Filters.map(x => (
-        {
-          key: x,
-          name: x,
-          sortType: 0,
-        }
-      ));
+      const columns = this.config.Filters.map(filter => Object.assign({key: filter.name}, filter));
 
       for (const column of columns) {
         const key = column.key;
@@ -155,6 +152,10 @@ Vue.component('ElasticFilterList', {
     },
 
     onSort(column) {
+      if (column.sortLock) {
+        return;
+      }
+
       column.sortType = Number(!column.sortType);
       column.filters = this.$_sortFilters(column.filters, column.sortType);
     },

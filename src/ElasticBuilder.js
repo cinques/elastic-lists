@@ -39,9 +39,26 @@ Vue.component('ElasticBuilder', {
       </div>
       
       <div v-if="fields.length" class="ElasticBuilder__filters" ref="filters">
-        <label v-for="(relation, idx) of config.FiltersRelation" :key="idx">
-          <div class="ElasticBuilder__label-text">F{{idx}}</div>
-          <select class="ElasticBuilder__label-option" @change="onSelectFilter">
+        <label v-for="(filter, idx) of config.Filters" :key="idx">
+          <div class="ElasticBuilder__label-text">
+            <div class="ElasticBuilder__label-text-left">F{{idx}}</div>
+            <div class="ElasticBuilder__label-text-right">
+              
+              <div class="ElasticBuilder__filter-sort-type" @click="filter.sortType = Number(!filter.sortType)">
+                <div v-if="filter.sortType === 0">A-Z</div>
+                <div v-else-if="filter.sortType === 1">1-9</div>
+              </div>
+              
+              <div
+                class="ElasticBuilder__filter-sort-lock"
+                :class="{ 'is-active' : filter.sortLock }"
+                @click="filter.sortLock = !filter.sortLock"
+              >
+                L
+              </div>
+            </div>
+          </div>
+          <select class="ElasticBuilder__label-option" v-model="filter.name">
             <option v-for="(field, fieldIdx) of fields" :value="field" :selected="fieldIdx === idx">
               {{field}}
             </option>
@@ -99,12 +116,22 @@ Vue.component('ElasticBuilder', {
     onFiltersRelation(event) {
       const target = event.target;
       if (target.checkValidity()) {
-        this.config.FiltersRelation = target.value.split('/');
-        this.$nextTick(this.onSelectFilter);
+        const ratios = target.value.split('/').map(Number);
+        const filters = this.config.Filters;
+
+        for (let i = 0; i < ratios.length; i++) {
+          if (filters[i]) {
+            filters[i].ratio = ratios[i];
+          } else {
+            filters.push({
+              name: this.fields[filters.length],
+              ratio: ratios[i],
+              sortType: 0,
+              sortLock: false,
+            });
+          }
+        }
       }
-    },
-    onSelectFilter() {
-      this.config.Filters = [...this.$refs.filters.querySelectorAll('select')].map(x => x.value);
     },
   }
 });
