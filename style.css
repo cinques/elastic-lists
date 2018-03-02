@@ -169,3 +169,12 @@ body {
 .ElasticView {
   margin: 0 32px;
 }
+
+
+.ElasticFieldBgLink {
+  position: absolute;
+  top: 0 !important;
+  left: 20px !important;
+  right: initial !important;
+  bottom: initial !important;
+}
