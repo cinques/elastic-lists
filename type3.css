@@ -94,8 +94,9 @@ body::-webkit-scrollbar {
 .ElasticFilterList__column:not(:last-child) {
   margin-right: 25px;
 }
-.ElasticFilterList__column:hover .ElasticFilterList__header {
+.ElasticFilterList__column:not(.ElasticFilterList__column--sort-lock):hover .ElasticFilterList__header {
   color: white;
+  cursor: pointer;
 }
 .ElasticFilterList__header {
   display: flex;
@@ -106,7 +107,6 @@ body::-webkit-scrollbar {
   
   color: #4e485c;
   border-bottom: #4e485c 1px solid;
-  cursor: pointer;
 }
 .ElasticFilterList__filters {
   position: relative;

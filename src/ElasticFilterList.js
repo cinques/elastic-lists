@@ -3,7 +3,8 @@ Vue.component('ElasticFilterList', {
     <div class="ElasticFilterList" :class="{ 'ElasticFilterList--sticky': sticky }">
       <div class="ElasticFilterList__column"
            v-for="(column, idx) of columns"
-           :style="{ flexGrow: config.Filters[idx].ratio }"
+           :class="{ 'ElasticFilterList__column--sort-lock': column.sortLock }"
+           :style="{ flexGrow: column.ratio }"
            :key="column.key">
         <div class="ElasticFilterList__header ellipsis" :title="column.name" @click="onSort(column)">
           <div class="ElasticFilterList__column-name">{{column.name}}</div>
