@@ -38,33 +38,46 @@ Vue.component('ElasticBuilder', {
         </label>
       </div>
       
-      <div v-if="fields.length" class="ElasticBuilder__filters" ref="filters">
-        <label v-for="(filter, idx) of config.Filters" :key="idx">
-          <div class="ElasticBuilder__label-text">
-            <div class="ElasticBuilder__label-text-left">F{{idx}}</div>
-            <div class="ElasticBuilder__label-text-right">
-              
-              <div class="ElasticBuilder__filter-sort-type" @click="filter.sortType = Number(!filter.sortType)">
-                <div v-if="filter.sortType === 0">A-Z</div>
-                <div v-else-if="filter.sortType === 1">1-9</div>
-              </div>
-              
-              <div
-                class="ElasticBuilder__filter-sort-lock"
-                :class="{ 'is-active' : filter.sortLock }"
-                @click="filter.sortLock = !filter.sortLock"
-              >
-                L
+      <template v-if="fields.length">
+      
+        <div class="ElasticBuilder__filters" ref="filters">
+          <label v-for="(filter, idx) of config.Filters" :key="idx">
+            <div class="ElasticBuilder__label-text">
+              <div class="ElasticBuilder__label-text-left">F{{idx}}</div>
+              <div class="ElasticBuilder__label-text-right">
+                
+                <div class="ElasticBuilder__filter-sort-type" @click="filter.sortType = Number(!filter.sortType)">
+                  <div v-if="filter.sortType === 0">A-Z</div>
+                  <div v-else-if="filter.sortType === 1">1-9</div>
+                </div>
+                
+                <div
+                  class="ElasticBuilder__filter-sort-lock"
+                  :class="{ 'is-active' : filter.sortLock }"
+                  @click="filter.sortLock = !filter.sortLock"
+                >
+                  L
+                </div>
               </div>
             </div>
-          </div>
-          <select class="ElasticBuilder__label-option" v-model="filter.name">
-            <option v-for="(field, fieldIdx) of fields" :value="field" :selected="fieldIdx === idx">
+            <select class="ElasticBuilder__label-option" v-model="filter.name">
+              <option v-for="(field, fieldIdx) of fields" :value="field" :selected="fieldIdx === idx">
+                {{field}}
+              </option>
+            </select>
+          </label>
+        </div>
+        
+        <label class="ElasticBuilder__json-order">
+          <div class="ElasticBuilder__label-text">Json Order</div>
+          <select class="ElasticBuilder__label-option" @change="onJsonOrderChange">
+            <option v-for="(field, fieldIdx) of fields" :value="field">
               {{field}}
             </option>
           </select>
         </label>
-      </div>
+        
+      </template>
       
       <div class="ElasticBuilder__row2">
           <div class="ElasticBuilder__json-template" >JSON Template</div>
@@ -132,6 +145,12 @@ Vue.component('ElasticBuilder', {
           }
         }
       }
+    },
+    onJsonOrderChange(e) {
+      const orderField = e.target.value;
+      this.config.JSON = this.config.JSON.sort(
+        ({[orderField]: a}, {[orderField]: b}) => a > b ? 1 : a < b ? -1 : 0
+      );
     },
   }
 });

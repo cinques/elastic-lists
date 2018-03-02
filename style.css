@@ -16,8 +16,8 @@ body {
 .ElasticBuilder {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  height: 296px;
+  justify-content: space-between;
+  min-height: 296px;
   padding: 0 32px;
   
   color: white;
@@ -25,6 +25,15 @@ body {
   font-size: 24px;
   font-weight: bold;
   background-color: #976FF3;
+}
+.ElasticBuilder > *:first-child {
+  margin-top: 30px;
+}
+.ElasticBuilder > *:last-child {
+  margin-bottom: 30px;
+}
+.ElasticBuilder > *:not(:last-child) {
+  margin-bottom: 20px;
 }
 .ElasticBuilder__row0,
 .ElasticBuilder__json-template {
@@ -36,7 +45,6 @@ body {
 .ElasticBuilder__row1 > label {
   display: flex;
   flex-direction: column;
-  margin-bottom: 10px;
   width: 0;
 }
 .ElasticBuilder__row1 > label:not(:last-child),
@@ -112,6 +120,9 @@ body {
 }
 .ElasticBuilder__filter-sort-lock:not(.is-active) {
   color: #9e9e9e;
+}
+.ElasticBuilder__json-order {
+  width: 202px;
 }
 
 .ElasticItem {
