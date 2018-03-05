@@ -75,6 +75,12 @@ body::-webkit-scrollbar {
 .ElasticFilterList--sticky .ElasticFilterList__filters {
   height: 50px;
 }
+.ElasticFilterList__scrollPosition {
+  position: absolute;
+  height: 2px;
+  
+  background-color: #976FF3;
+}
 
 
 .ElasticFilterList {

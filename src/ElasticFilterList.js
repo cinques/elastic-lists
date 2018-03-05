@@ -19,7 +19,11 @@ Vue.component('ElasticFilterList', {
           />
           <div v-show="!sticky">
             <div class="ElasticFilterList__filters-shadow"></div>
-            <div class="ElasticFilterList__filters-content">
+            <div class="ElasticFilterList__filters-content" @scroll="onScrollColumn($event, column)">
+              <div
+                class="ElasticFilterList__scrollPosition"
+                :style="{ width: column.scroll.width + 'px', left: column.scroll.left + 'px' }"
+              ></div>
               <ElasticFilter
                 v-for="([filter, number], _) of [...column.filters]"
                 :key="filter"
@@ -67,7 +71,17 @@ Vue.component('ElasticFilterList', {
   methods: {
     calculateFilters() {
       const filters = {};
-      const columns = this.config.Filters.map(filter => Object.assign({key: filter.name}, filter));
+      const columns = this.config.Filters.map(
+        filter => Object.assign(
+          {
+            key: filter.name,
+            scroll: {
+              width: '0',
+              left: '0',
+            },
+          },
+          filter)
+      );
 
       for (const column of columns) {
         const key = column.key;
@@ -136,6 +150,12 @@ Vue.component('ElasticFilterList', {
 
     onScroll() {
       this.sticky = window.pageYOffset > this.offsetTop;
+    },
+
+    onScrollColumn(e, column) {
+      const { scrollTop, scrollHeight, scrollWidth, offsetHeight } = e.target;
+      column.scroll.width = (offsetHeight / scrollHeight * scrollWidth).toFixed(0);
+      column.scroll.left = (scrollTop / scrollHeight * scrollWidth).toFixed(0);
     },
 
     onFilter(key, value, isActive) {
