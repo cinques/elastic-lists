@@ -6,7 +6,7 @@ Vue.component('ElasticItemList', {
                    class="ElasticItem"
                    :is="config.CardType"
                    :model="filteredData[0]" />
-        <template v-if="cardTemplate">
+        <template v-if="cardTemplate && isShowCards">
           <ElasticItem v-for="datum of filteredData"
                      :key="datum.__id__"
                      :datum="datum"
@@ -25,6 +25,7 @@ Vue.component('ElasticItemList', {
     return {
       filteredData: [],
       cardTemplate: null,
+      isShowCards: this.config.IsShowCardsOnEmptyFilter,
     }
   },
   provide() {
@@ -47,8 +48,11 @@ Vue.component('ElasticItemList', {
     }
   },
   created() {
-    EventBus.$on('onFilter', () => {
+    EventBus.$on('onFilter', (activeFiltersCount) => {
       this.filteredData = this.config.JSON.filter(x => x.__filtered__);
+      if (!this.config.IsShowCardsOnEmptyFilter) {
+        this.isShowCards = !!activeFiltersCount;
+      }
     });
     EventBus.$on('onFieldChange', () => {
       this.cardTemplate = this.buildCardTemplate();

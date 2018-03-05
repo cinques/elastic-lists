@@ -106,7 +106,8 @@ body {
   text-transform: lowercase;
   cursor: pointer;
 }
-.ElasticBuilder__filters .ElasticBuilder__label-text {
+.ElasticBuilder__filters .ElasticBuilder__label-text,
+.ElasticBuilder__json-order .ElasticBuilder__label-text {
   display: flex;
   justify-content: space-between;
 }
@@ -114,11 +115,14 @@ body {
   margin-right: 2px;
 }
 .ElasticBuilder__filter-sort-type,
-.ElasticBuilder__filter-sort-lock {
+.ElasticBuilder__filter-sort-lock,
+.ElasticBuilder__json-order-type,
+.ElasticBuilder__json-order-show {
   display: inline-block;
   cursor: pointer;
 }
-.ElasticBuilder__filter-sort-lock:not(.is-active) {
+.ElasticBuilder__filter-sort-lock:not(.is-active),
+.ElasticBuilder__json-order-show:not(.is-active) {
   color: #9e9e9e;
 }
 .ElasticBuilder__json-order {

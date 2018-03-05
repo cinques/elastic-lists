@@ -149,7 +149,10 @@ Vue.component('ElasticFilterList', {
       }
 
       this.recalculate();
-      EventBus.$emit('onFilter');
+      EventBus.$emit(
+        'onFilter',
+        Object.values(this.filters).reduce((acc, cv) => acc + cv.length, 0)
+      );
     },
 
     onSort(column) {

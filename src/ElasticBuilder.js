@@ -47,8 +47,7 @@ Vue.component('ElasticBuilder', {
               <div class="ElasticBuilder__label-text-right">
                 
                 <div class="ElasticBuilder__filter-sort-type" @click="filter.sortType = Number(!filter.sortType)">
-                  <div v-if="filter.sortType === 0">A-Z</div>
-                  <div v-else-if="filter.sortType === 1">1-9</div>
+                  {{ filter.sortType === 0 ? 'A-Z' : '1-9' }}
                 </div>
                 
                 <div
@@ -69,7 +68,25 @@ Vue.component('ElasticBuilder', {
         </div>
         
         <label class="ElasticBuilder__json-order">
-          <div class="ElasticBuilder__label-text">Json Order</div>
+          <div class="ElasticBuilder__label-text">
+            <div class="ElasticBuilder__label-text-left">Json Order</div>
+            <div class="ElasticBuilder__label-text-right">
+              <div
+                class="ElasticBuilder__json-order-type"
+                @click="jsonOrderType = Number(!jsonOrderType), $_sortJson()"
+              >
+                {{ jsonOrderType === 0 ? 'A-Z' : 'Z-A' }}
+              </div>
+              
+              <div
+                class="ElasticBuilder__json-order-show"
+                :class="{ 'is-active' : config.IsShowCardsOnEmptyFilter }"
+                @click="config.IsShowCardsOnEmptyFilter = !config.IsShowCardsOnEmptyFilter"
+              >
+                S
+              </div>
+            </div>
+          </div>
           <select class="ElasticBuilder__label-option" @change="onJsonOrderChange">
             <option v-for="(field, fieldIdx) of fields" :value="field">
               {{field}}
@@ -96,6 +113,8 @@ Vue.component('ElasticBuilder', {
       availableCardTypes: ['type1', 'type2', 'type3'],
       jsonFileName: '',
       styleFileName: '',
+      jsonOrderType: 0,
+      jsonOrderField: null,
     }
   },
   computed: {
@@ -147,10 +166,20 @@ Vue.component('ElasticBuilder', {
       }
     },
     onJsonOrderChange(e) {
-      const orderField = e.target.value;
-      this.config.JSON = this.config.JSON.sort(
-        ({[orderField]: a}, {[orderField]: b}) => a > b ? 1 : a < b ? -1 : 0
-      );
+      this.jsonOrderField = e.target.value;
+      this.$_sortJson();
+    },
+    $_sortJson() {
+      const orderType = this.jsonOrderType;
+      const orderField = this.jsonOrderField || this.fields[0];
+
+      function compareFn({ [orderField]: a }, { [orderField]: b }) {
+         return orderType === 0
+           ? a > b ? 1 : a < b ? -1 : 0
+           : a < b ? 1 : a > b ? -1 : 0;
+      }
+
+      this.config.JSON = this.config.JSON.sort(compareFn);
     },
   }
 });

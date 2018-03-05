@@ -62,6 +62,7 @@ Vue.component('App', {
         }],
         JSON: [],
         Style: '',
+        IsShowCardsOnEmptyFilter: true,
       },
     }
   },

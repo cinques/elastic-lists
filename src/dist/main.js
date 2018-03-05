@@ -1,18 +1,22 @@
 Vue.component('ElasticItemList', {
   props: ['config'],
   template: `<div class="ElasticItemList">
-              <template v-if="filteredData.length">
+              <template v-if="filteredData.length && isShowCards">
                 ${itemTemplate}
               </template>
             </div>`,
   data() {
     return {
       filteredData: this.config.JSON,
+      isShowCards: this.config.IsShowCardsOnEmptyFilter,
     }
   },
   created() {
-    EventBus.$on('onFilter', () => {
+    EventBus.$on('onFilter', (activeFiltersCount) => {
       this.filteredData = this.config.JSON.filter(x => x.__filtered__);
+      if (!this.config.IsShowCardsOnEmptyFilter) {
+        this.isShowCards = !!activeFiltersCount;
+      }
     });
   },
 });
