@@ -73,7 +73,7 @@ Vue.component('App', {
       zip.file('index.html', dist.index);
       zip.file('style.css', this.config.Style);
       zip.file('vue.js', dist.vue);
-      zip.file('data.js', 'window.data = ' + JSON.stringify(this.config.JSON));
+      zip.file('data.json', JSON.stringify(this.config.JSON));
 
       const itemTemplate = this.$refs.itemList.buildCardTemplate(true);
       const config = Object.assign({}, this.config, { JSON: [], Style: ''});

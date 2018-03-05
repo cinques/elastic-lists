@@ -30,12 +30,10 @@ Vue.component('App', {
         <ElasticItemList ref="itemList" :config="config"/>
       </div>
     </div>`,
-  created() {
-    this.config.JSON = data;
-  },
-  data() {
-    return {
-      config: ${config}
+  props: {
+    config: {
+      type: Object,
+      required: true,
     }
   },
 });
@@ -43,7 +41,20 @@ Vue.component('App', {
 
 window.EventBus = new Vue();
 
-new Vue({
-  el: '#app',
-  template: '<App/>',
-});
+fetch('data.json')
+  .then(response => response.json())
+  .then(json => {
+    const config = ${config};
+    config.JSON = json;
+
+    new Vue({
+      el: '#app',
+      template: '<App :config="config"/>',
+      data() {
+        return {
+          config,
+        }
+      },
+    });
+  });
+
