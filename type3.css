@@ -76,10 +76,14 @@ body::-webkit-scrollbar {
   height: 50px;
 }
 .ElasticFilterList__scrollPosition {
+  display: none;
   position: absolute;
   height: 2px;
   
   background-color: #976FF3;
+}
+.ElasticFilterList__filters-content:hover .ElasticFilterList__scrollPosition {
+  display: block;
 }
 
 

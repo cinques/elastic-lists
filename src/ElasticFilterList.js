@@ -8,7 +8,7 @@ Vue.component('ElasticFilterList', {
            :key="column.key">
         <div class="ElasticFilterList__header ellipsis" :title="column.name" @click="onSort(column)">
           <div class="ElasticFilterList__column-name">{{column.name}}</div>
-          <div v-show="column.sortType === 1" class="ElasticFilterList__column-sort">A-Z</div>
+          <div v-show="column.sortType === 1 && !column.sortLock" class="ElasticFilterList__column-sort">1-9</div>
         </div>
         <div class="ElasticFilterList__filters">
           <ElasticFilter
