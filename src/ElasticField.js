@@ -13,7 +13,7 @@ Vue.component('ElasticField', {
       const base = this.$refs.base;
       const classList = this.$el.classList;
       return `
-        <div class="${classList}">{{ datum.${base.selected} }}</div>
+        <div class="${classList}">{{ datum['${base.selected}'].toString() }}</div>
       `;
     }
   },

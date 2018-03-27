@@ -11,13 +11,7 @@ Vue.component('ElasticFilterList', {
           <div v-show="column.sortType === 1 && !column.sortLock" class="ElasticFilterList__column-sort">1-9</div>
         </div>
         <div class="ElasticFilterList__filters">
-          <ElasticFilter
-            v-show="sticky"
-            :name="filters[column.key][0] || '- Все -'"
-            :number="column.filters.get(filters[column.key][0])"
-            :canChangeVisible="false"
-          />
-          <div v-show="!sticky">
+          
             <div class="ElasticFilterList__filters-shadow"></div>
             <div class="ElasticFilterList__filters-content" @scroll="onScrollColumn($event, column)">
               <div
@@ -32,7 +26,7 @@ Vue.component('ElasticFilterList', {
                 @onFilter="onFilter(column.key, ...arguments)"
               />
             </div>
-          </div>
+          
         </div>
       </div>
     </div>`,
@@ -60,7 +54,7 @@ Vue.component('ElasticFilterList', {
   },
   created() {
     this.calculateFilters();
-    window.addEventListener('scroll', this.onScroll);
+    //window.addEventListener('scroll', this.onScroll);
   },
   destroyed() {
     window.removeEventListener('scroll', this.onScroll);
