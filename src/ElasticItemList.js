@@ -86,7 +86,7 @@ Vue.component('ElasticItemList', {
       const rootClone = root.cloneNode();
       rootClone.innerHTML = markup;
   
-      rootClone.setAttribute(':class', '"now" + datum.now');
+      rootClone.setAttribute(':class', '"card_option-" + datum.card_option');
       
       if (raw) {
         rootClone.setAttribute('v-for', 'datum of filteredData');

@@ -20,7 +20,7 @@ Vue.component('ElasticFieldLink', {
       const base = this.$refs.base;
       const classList = this.$el.classList;
       return `
-        <div v-show="datum.${base.selected}" class="${classList}">
+        <div :class="{ 'is-disabled': !datum.${base.selected} }" class="${classList}">
           <a :href="datum.${base.selected}">${this.text}</a>
         </div>
       `;
