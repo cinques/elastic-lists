@@ -18,7 +18,7 @@ Vue.component('ElasticFieldLinkNamed', {
             const classList = this.$el.classList;
             return `
                 <div v-if="Array.isArray(datum.${base.selected})"
-                     :class="{ 'is-disabled': !datum.${base.selected}[0] }"
+                     :class="{ 'is-disabled': !datum.${base.selected}[1] }"
                      class="${classList}"
                 >
                   <a :href="datum.${base.selected}[1]">{{ datum.${base.selected}[0] }}</a>
